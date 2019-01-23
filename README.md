@@ -2,8 +2,8 @@
 
 Takes ProseMirror JSON and outputs HTML.
 
-<!-- [![](https://img.shields.io/packagist/v/scrumpy/prosemirror-to-html.svg)](https://packagist.org/packages/scrumpy/prosemirror-to-html)
-[![](https://img.shields.io/packagist/dt/scrumpy/prosemirror-to-html.svg)](https://packagist.org/packages/scrumpy/prosemirror-to-html) -->
+[![](https://img.shields.io/packagist/v/scrumpy/prosemirror-to-html.svg)](https://packagist.org/packages/scrumpy/prosemirror-to-html)
+[![](https://img.shields.io/packagist/dt/scrumpy/prosemirror-to-html.svg)](https://packagist.org/packages/scrumpy/prosemirror-to-html)
 [![](https://api.travis-ci.org/scrumpy/prosemirror-to-html.svg?branch=master)](https://travis-ci.org/scrumpy/prosemirror-to-html)
 
 ## Installation
