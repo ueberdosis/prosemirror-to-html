@@ -1,0 +1,29 @@
+{
+    "name": "scrumpy/prosemirror-to-html",
+    "type": "library",
+    "description": "Takes HTML and outputs ProseMirror compatible JSON.",
+    "keywords": ["prosemirror"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hans Pagel"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0",
+        "league/climate": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Scrumpy\\ProseMirrorToHtml\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Scrumpy\\ProseMirrorToHtml\\Test\\": "tests/"
+        }
+    }
+}

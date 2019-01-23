@@ -1,0 +1,13 @@
+language: php
+
+php:
+  - '7.1'
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+before_script:
+    - travis_retry composer install --no-interaction --prefer-dist
+
+script: phpunit
