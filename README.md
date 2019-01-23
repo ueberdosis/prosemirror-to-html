@@ -1,6 +1,6 @@
 # HTML to ProseMirror
 
-Takes HTML and outputs ProseMirror compatible JSON.
+Takes ProseMirror JSON and outputs HTML.
 
 <!-- [![](https://img.shields.io/packagist/v/scrumpy/prosemirror-to-html.svg)](https://packagist.org/packages/scrumpy/prosemirror-to-html)
 [![](https://img.shields.io/packagist/dt/scrumpy/prosemirror-to-html.svg)](https://packagist.org/packages/scrumpy/prosemirror-to-html) -->
@@ -15,26 +15,26 @@ composer require scrumpy/prosemirror-to-html
 ## Usage
 
 ```php
-(new \Scrumpy\ProseMirrorToHtml\Renderer)->render('<p>Example Text</p>')
+(new \Scrumpy\ProseMirrorToHtml\Renderer)->render([
+    'type' => 'doc',
+    'content' => [
+        [
+            'type' => 'paragraph',
+            'content' => [
+                [
+                    'type' => 'text',
+                    'text' => 'Example Paragraph',
+                ],
+            ],
+        ],
+    ],
+])
 ```
 
 ## Output
 
-```json
-{
-    "type": "doc",
-    "content": [
-        {
-            "type": "paragraph",
-            "content": [
-                {
-                    "type": "text",
-                    "text": "Example Text"
-                }
-            ]
-        }
-    ]
-}
+```html
+<p>Example Text</p>
 ```
 
 ## Contributing
