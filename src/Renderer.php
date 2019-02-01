@@ -10,6 +10,7 @@ class Renderer
         Nodes\Heading::class,
         Nodes\Paragraph::class,
         Nodes\BulletList::class,
+        Nodes\OrderedList::class,
         Nodes\ListItem::class,
     ];
 
