@@ -15,6 +15,7 @@ class Renderer
         Marks\Bold::class,
         Marks\Code::class,
         Marks\Italic::class,
+        Marks\Underline::class
     ];
 
     public function document($value)
