@@ -9,6 +9,8 @@ class Renderer
     protected $nodes = [
         Nodes\Heading::class,
         Nodes\Paragraph::class,
+        Nodes\BulletList::class,
+        Nodes\ListItem::class,
     ];
 
     protected $marks = [
