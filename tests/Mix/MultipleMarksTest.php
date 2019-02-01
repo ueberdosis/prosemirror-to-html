@@ -26,6 +26,9 @@ class MultipleMarksTest extends TestCase
                                 [
                                     'type' => 'italic',
                                 ],
+                                [
+                                    'type' => 'underline',
+                                ],
                             ],
                         ],
                     ],
@@ -33,7 +36,7 @@ class MultipleMarksTest extends TestCase
             ],
         ];
 
-        $html = '<p><strong><em>Example Text</em></strong></p>';
+        $html = '<p><strong><em><u>Example Text</u></em></strong></p>';
 
         $this->assertEquals($html, (new Renderer)->render($json));
     }
