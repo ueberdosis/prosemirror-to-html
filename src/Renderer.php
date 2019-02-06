@@ -7,6 +7,7 @@ class Renderer
     protected $document;
 
     protected $nodes = [
+        Nodes\CodeBlock::class,
         Nodes\Heading::class,
         Nodes\Paragraph::class,
     ];
@@ -87,22 +88,39 @@ class Renderer
         return join($html);
     }
 
-    private function renderOpeningTag($tag)
+    private function renderOpeningTag($tags)
     {
-        if (!$tag) {
+        $tags = (array) $tags;
+
+        if (!$tags || !count($tags)) {
             return null;
         }
 
-        return "<{$tag}>";
+        return join('', array_map(function($item) {
+            if (is_string($item)) {
+                return "<{$item}>";
+            }
+
+            return "<{$item['tag']}>";
+        }, $tags));
     }
 
-    private function renderClosingTag($tag)
+    private function renderClosingTag($tags)
     {
-        if (!$tag) {
+        $tags = (array) $tags;
+        $tags = array_reverse($tags);
+
+        if (!$tags || !count($tags)) {
             return null;
         }
 
-        return "</{$tag}>";
+        return join('', array_map(function($item) {
+            if (is_string($item)) {
+                return "</{$item}>";
+            }
+
+            return "</{$item['tag']}>";
+        }, $tags));
     }
 
     public function render($value)
