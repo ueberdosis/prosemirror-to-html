@@ -107,5 +107,10 @@ class Renderer
 
         return join($html);
     }
+
+    public function addNode($node)
+    {
+        $this->nodes[] = $node;
+    }
 }
 
