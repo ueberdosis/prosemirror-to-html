@@ -37,6 +37,33 @@ composer require scrumpy/prosemirror-to-html
 <p>Example Text</p>
 ```
 
+## Custom Nodes
+
+Define your custom nodes as PHP classes:
+
+```php
+<?php
+
+class CustomNode extends \Scrumpy\ProseMirrorToHtml\Nodes\Node
+{
+    public function matching()
+    {
+        return $this->node->type === 'custom';
+    }
+
+    public function tag()
+    {
+        return 'marquee';
+    }
+}
+```
+
+And register them:
+
+```php
+$renderer->addNode(CustomNode::class);
+```
+
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
