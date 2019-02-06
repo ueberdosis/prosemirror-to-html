@@ -14,6 +14,26 @@ class CustomNodeTest extends TestCase
             'type' => 'doc',
             'content' => [
                 [
+                    'type' => 'span',
+                ],
+            ],
+        ];
+
+        $html = '<span></span>';
+
+        $renderer = new Renderer;
+        $renderer->addNode(Custom\Span::class);
+
+        $this->assertEquals($html, $renderer->render($json));
+    }
+
+    /** @test */
+    public function custom_node_has_correct_text_gets_rendered_correctly()
+    {
+        $json = [
+            'type' => 'doc',
+            'content' => [
+                [
                     'type' => 'user',
                     'attrs' => [
                         'id' => 123,
@@ -22,7 +42,7 @@ class CustomNodeTest extends TestCase
             ],
         ];
 
-        $html = '<span></span>';
+        $html = 'Foobar';
 
         $renderer = new Renderer;
         $renderer->addNode(Custom\User::class);

@@ -2,15 +2,8 @@
 
 namespace Scrumpy\ProseMirrorToHtml\Marks;
 
-class Code
+class Code extends Mark
 {
-    protected $mark;
-
-    function __construct($mark)
-    {
-        $this->mark = $mark;
-    }
-
     public function matching()
     {
         return $this->mark->type === 'code';

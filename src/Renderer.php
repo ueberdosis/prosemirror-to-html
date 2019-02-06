@@ -60,6 +60,8 @@ class Renderer
             }
         } elseif (isset($node->text)) {
             $html[] = $node->text;
+        } elseif ($text = $renderClass->text()) {
+            $html[] = $text;
         }
 
         foreach ($this->nodes as $class) {
