@@ -99,7 +99,7 @@ class Renderer
         if (!$tag) {
             return null;
         }
-                
+
         return "</{$tag}>";
     }
 
