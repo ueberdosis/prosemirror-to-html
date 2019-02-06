@@ -87,11 +87,19 @@ class Renderer
 
     private function renderOpeningTag($tag)
     {
+        if (!$tag) {
+            return null;
+        }
+
         return "<{$tag}>";
     }
 
     private function renderClosingTag($tag)
     {
+        if (!$tag) {
+            return null;
+        }
+                
         return "</{$tag}>";
     }
 
