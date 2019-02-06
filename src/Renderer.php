@@ -16,6 +16,7 @@ class Renderer
         Marks\Bold::class,
         Marks\Code::class,
         Marks\Italic::class,
+        Marks\Link::class,
     ];
 
     public function document($value)
@@ -101,7 +102,14 @@ class Renderer
                 return "<{$item}>";
             }
 
-            return "<{$item['tag']}>";
+            $attrs = '';
+            if (isset($item['attrs'])) {
+                foreach ($item['attrs'] as $attribute => $value) {
+                    $attrs .= " {$attribute}=\"{$value}\"";
+                }
+            }
+
+            return "<{$item['tag']}{$attrs}>";
         }, $tags));
     }
 
@@ -139,6 +147,13 @@ class Renderer
     public function addNode($node)
     {
         $this->nodes[] = $node;
+    }
+
+    public function addNodes($nodes)
+    {
+        foreach ($nodes as $node) {
+            $this->addNode($node);
+        }
     }
 }
 

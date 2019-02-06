@@ -4,15 +4,15 @@ namespace Scrumpy\ProseMirrorToHtml\Test\Nodes\Custom;
 
 use Scrumpy\ProseMirrorToHtml\Nodes\Node;
 
-class Span extends Node
+class Div extends Node
 {
     public function matching()
     {
-        return $this->node->type === 'span';
+        return $this->node->type === 'div';
     }
 
     public function tag()
     {
-        return 'span';
+        return 'div';
     }
 }

@@ -14,15 +14,35 @@ class CustomNodeTest extends TestCase
             'type' => 'doc',
             'content' => [
                 [
-                    'type' => 'span',
+                    'type' => 'div',
                 ],
             ],
         ];
 
-        $html = '<span></span>';
+        $html = '<div></div>';
 
         $renderer = new Renderer;
-        $renderer->addNode(Custom\Span::class);
+        $renderer->addNode(Custom\Div::class);
+
+        $this->assertEquals($html, $renderer->render($json));
+    }
+
+    /** @test */
+    public function multiple_custom_nodes_get_rendered_correctly()
+    {
+        $json = [
+            'type' => 'doc',
+            'content' => [
+                [
+                    'type' => 'div',
+                ],
+            ],
+        ];
+
+        $html = '<div></div>';
+
+        $renderer = new Renderer;
+        $renderer->addNodes([Custom\Div::class]);
 
         $this->assertEquals($html, $renderer->render($json));
     }
