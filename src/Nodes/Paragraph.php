@@ -2,15 +2,8 @@
 
 namespace Scrumpy\ProseMirrorToHtml\Nodes;
 
-class Paragraph
+class Paragraph extends Node
 {
-    protected $node;
-
-    function __construct($node)
-    {
-        $this->node = $node;
-    }
-
     public function matching()
     {
         return $this->node->type === 'paragraph';

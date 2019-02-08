@@ -7,6 +7,7 @@ class Renderer
     protected $document;
 
     protected $nodes = [
+        Nodes\CodeBlock::class,
         Nodes\Heading::class,
         Nodes\Paragraph::class,
         Nodes\BulletList::class,
@@ -18,6 +19,7 @@ class Renderer
         Marks\Bold::class,
         Marks\Code::class,
         Marks\Italic::class,
+        Marks\Link::class,
         Marks\Underline::class
     ];
 
@@ -64,6 +66,8 @@ class Renderer
             }
         } elseif (isset($node->text)) {
             $html[] = $node->text;
+        } elseif ($text = $renderClass->text()) {
+            $html[] = $text;
         }
 
         foreach ($this->nodes as $class) {
@@ -89,14 +93,46 @@ class Renderer
         return join($html);
     }
 
-    private function renderOpeningTag($tag)
+    private function renderOpeningTag($tags)
     {
-        return "<{$tag}>";
+        $tags = (array) $tags;
+
+        if (!$tags || !count($tags)) {
+            return null;
+        }
+
+        return join('', array_map(function($item) {
+            if (is_string($item)) {
+                return "<{$item}>";
+            }
+
+            $attrs = '';
+            if (isset($item['attrs'])) {
+                foreach ($item['attrs'] as $attribute => $value) {
+                    $attrs .= " {$attribute}=\"{$value}\"";
+                }
+            }
+
+            return "<{$item['tag']}{$attrs}>";
+        }, $tags));
     }
 
-    private function renderClosingTag($tag)
+    private function renderClosingTag($tags)
     {
-        return "</{$tag}>";
+        $tags = (array) $tags;
+        $tags = array_reverse($tags);
+
+        if (!$tags || !count($tags)) {
+            return null;
+        }
+
+        return join('', array_map(function($item) {
+            if (is_string($item)) {
+                return "</{$item}>";
+            }
+
+            return "</{$item['tag']}>";
+        }, $tags));
     }
 
     public function render($value)
@@ -110,6 +146,18 @@ class Renderer
         }
 
         return join($html);
+    }
+
+    public function addNode($node)
+    {
+        $this->nodes[] = $node;
+    }
+
+    public function addNodes($nodes)
+    {
+        foreach ($nodes as $node) {
+            $this->addNode($node);
+        }
     }
 }
 
