@@ -1,6 +1,6 @@
 <?php
 
-namespace Scrumpy\ProseMirrorToHtml\Test\Nodes;
+namespace Scrumpy\ProseMirrorToHtml\Test\Marks;
 
 use Scrumpy\ProseMirrorToHtml\Renderer;
 use Scrumpy\ProseMirrorToHtml\Test\TestCase;
