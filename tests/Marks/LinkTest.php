@@ -5,7 +5,7 @@ namespace Scrumpy\ProseMirrorToHtml\Test\Marks;
 use Scrumpy\ProseMirrorToHtml\Renderer;
 use Scrumpy\ProseMirrorToHtml\Test\TestCase;
 
-class CustomMarkTest extends TestCase
+class LinkTest extends TestCase
 {
     /** @test */
     public function link_mark_gets_rendered_correctly()
