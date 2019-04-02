@@ -53,6 +53,7 @@ class Renderer
 
             if ($renderClass->matching()) {
                 $html[] = $this->renderOpeningTag($renderClass->tag());
+                break;
             }
         }
 
