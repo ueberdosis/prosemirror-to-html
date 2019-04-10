@@ -62,7 +62,7 @@ class Renderer
             }
         } elseif (isset($node->text)) {
             $html[] = $node->text;
-        } elseif ($text = $renderClass->text()) {
+        } elseif ($renderClass->matching() && ($text = $renderClass->text())) {
             $html[] = $text;
         }
 

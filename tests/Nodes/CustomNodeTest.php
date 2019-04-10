@@ -69,4 +69,24 @@ class CustomNodeTest extends TestCase
 
         $this->assertEquals($html, $renderer->render($json));
     }
+
+    /** @test */
+    public function a_custom_nodes_text_does_not_get_used_when_other_nodes_dont_have_text()
+    {
+        $json = [
+            'type' => 'doc',
+            'content' => [
+                [
+                    'type' => 'paragraph',
+                ],
+            ],
+        ];
+
+        $html = '<p></p>';
+
+        $renderer = new Renderer;
+        $renderer->addNode(Custom\User::class);
+
+        $this->assertEquals($html, $renderer->render($json));
+    }
 }
