@@ -53,6 +53,7 @@ class Renderer
 
             if ($renderClass->matching()) {
                 $html[] = $this->renderOpeningTag($renderClass->tag());
+                break;
             }
         }
 
@@ -61,7 +62,7 @@ class Renderer
                 $html[] = $this->renderNode($nestedNode);
             }
         } elseif (isset($node->text)) {
-            $html[] = $node->text;
+            $html[] = htmlentities($node->text, ENT_QUOTES);
         } elseif ($text = $renderClass->text()) {
             $html[] = $text;
         }
