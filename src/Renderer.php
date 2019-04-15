@@ -155,5 +155,17 @@ class Renderer
             $this->addNode($node);
         }
     }
+
+    public function addMark($mark)
+    {
+        $this->marks[] = $mark;
+    }
+
+    public function addMarks($marks)
+    {
+        foreach ($marks as $mark) {
+            $this->addMark($mark);
+        }
+    }
 }
 
