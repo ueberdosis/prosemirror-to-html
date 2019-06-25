@@ -66,7 +66,7 @@ $renderer->addNode(CustomNode::class);
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+Pull Requests are welcome.
 
 ## Credits
 
