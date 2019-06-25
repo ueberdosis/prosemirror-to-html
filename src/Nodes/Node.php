@@ -16,6 +16,11 @@ class Node
         return false;
     }
 
+    public function selfClosing()
+    {
+        return false;
+    }
+
     public function tag()
     {
         return null;
