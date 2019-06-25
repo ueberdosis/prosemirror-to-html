@@ -11,9 +11,9 @@ class HardBreak extends Node
         return $this->node->type === 'hard_break';
     }
 
-    public function paired()
+    public function selfClosing()
     {
-        return false;
+        return true;
     }
 
     public function tag()

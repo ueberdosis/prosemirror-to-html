@@ -16,9 +16,9 @@ class Node
         return false;
     }
 
-    public function paired()
+    public function selfClosing()
     {
-        return true;
+        return false;
     }
 
     public function tag()
