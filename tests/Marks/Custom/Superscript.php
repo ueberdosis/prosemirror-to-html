@@ -2,7 +2,6 @@
 
 namespace Scrumpy\ProseMirrorToHtml\Test\Marks\Custom;
 
-
 use Scrumpy\ProseMirrorToHtml\Marks\Mark;
 
 class Superscript extends Mark

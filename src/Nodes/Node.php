@@ -6,7 +6,7 @@ class Node
 {
     protected $node;
 
-    function __construct($node)
+    public function __construct($node)
     {
         $this->node = $node;
     }

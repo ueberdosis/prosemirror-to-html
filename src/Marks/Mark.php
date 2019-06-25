@@ -6,7 +6,7 @@ class Mark
 {
     protected $mark;
 
-    function __construct($mark)
+    public function __construct($mark)
     {
         $this->mark = $mark;
     }

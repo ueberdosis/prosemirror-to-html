@@ -3,8 +3,8 @@
 namespace Scrumpy\ProseMirrorToHtml\Test\Marks;
 
 use Scrumpy\ProseMirrorToHtml\Renderer;
-use Scrumpy\ProseMirrorToHtml\Test\Marks\Custom\Superscript;
 use Scrumpy\ProseMirrorToHtml\Test\TestCase;
+use Scrumpy\ProseMirrorToHtml\Test\Marks\Custom\Superscript;
 
 class CustomMarkTest extends TestCase
 {

@@ -2,13 +2,11 @@
 
 namespace Scrumpy\ProseMirrorToHtml\Test\Nodes;
 
-
 use Scrumpy\ProseMirrorToHtml\Renderer;
 use Scrumpy\ProseMirrorToHtml\Test\TestCase;
 
 class XSSTest extends TestCase
 {
-
     /** @test */
     public function text_should_not_get_rendered_as_html()
     {

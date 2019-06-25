@@ -3,7 +3,6 @@
 namespace Scrumpy\ProseMirrorToHtml\Test;
 
 use Scrumpy\ProseMirrorToHtml\Renderer;
-use Scrumpy\ProseMirrorToHtml\Test\TestCase;
 
 class InputTest extends TestCase
 {

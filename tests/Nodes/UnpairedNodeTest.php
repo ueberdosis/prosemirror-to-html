@@ -22,12 +22,12 @@ class UnpairedNodeTest extends TestCase
                             'text' => 'some text',
                         ],
                         [
-                            'type' => 'hard_break'
+                            'type' => 'hard_break',
                         ],
                         [
                             'type' => 'text',
-                            'text' => 'some more text'
-                        ]
+                            'text' => 'some more text',
+                        ],
                     ],
                 ],
             ],

@@ -102,7 +102,7 @@ class Renderer
             return null;
         }
 
-        return join('', array_map(function($item) {
+        return join('', array_map(function ($item) {
             if (is_string($item)) {
                 return "<{$item}>";
             }
@@ -127,7 +127,7 @@ class Renderer
             return null;
         }
 
-        return join('', array_map(function($item) {
+        return join('', array_map(function ($item) {
             if (is_string($item)) {
                 return "</{$item}>";
             }
@@ -173,4 +173,3 @@ class Renderer
         }
     }
 }
-
