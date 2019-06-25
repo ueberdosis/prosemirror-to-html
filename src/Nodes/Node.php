@@ -16,6 +16,11 @@ class Node
         return false;
     }
 
+    public function paired()
+    {
+        return true;
+    }
+
     public function tag()
     {
         return null;

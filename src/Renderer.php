@@ -70,7 +70,7 @@ class Renderer
         foreach ($this->nodes as $class) {
             $renderClass = new $class($node);
 
-            if ($renderClass->matching()) {
+            if ($renderClass->matching() && $renderClass->paired()) {
                 $html[] = $this->renderClosingTag($renderClass->tag());
             }
         }
