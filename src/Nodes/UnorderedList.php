@@ -6,7 +6,7 @@ class UnorderedList extends Node
 {
     public function matching()
     {
-        return $this->node->type === 'unordered_list';
+        return $this->node->type === 'bullet_list';
     }
 
     public function tag()
