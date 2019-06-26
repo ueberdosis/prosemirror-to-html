@@ -6,10 +6,10 @@ use Scrumpy\ProseMirrorToHtml\Renderer;
 use Scrumpy\ProseMirrorToHtml\Test\TestCase;
 use Scrumpy\ProseMirrorToHtml\Test\Nodes\Custom\HardBreak;
 
-class UnpairedNodeTest extends TestCase
+class HardBreakNodeTest extends TestCase
 {
     /** @test */
-    public function an_unpaired_node_gets_rendered_correctly()
+    public function self_closing_node_gets_rendered_correctly()
     {
         $json = [
             'type' => 'doc',
