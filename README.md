@@ -37,6 +37,23 @@ composer require scrumpy/prosemirror-to-html
 <p>Example Text</p>
 ```
 
+## Supported Nodes
+
+- Blockquote
+- BulletList
+- CodeBlock
+- Heading
+- ListItem
+- OrderedList
+- Paragraph
+
+## Supported Marks
+
+- Bold
+- Code
+- Italic
+- Link
+
 ## Custom Nodes
 
 Define your custom nodes as PHP classes:
