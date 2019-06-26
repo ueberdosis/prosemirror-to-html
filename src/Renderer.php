@@ -7,8 +7,12 @@ class Renderer
     protected $document;
 
     protected $nodes = [
+        Nodes\Blockquote::class,
+        Nodes\BulletList::class,
         Nodes\CodeBlock::class,
         Nodes\Heading::class,
+        Nodes\ListItem::class,
+        Nodes\OrderedList::class,
         Nodes\Paragraph::class,
     ];
 

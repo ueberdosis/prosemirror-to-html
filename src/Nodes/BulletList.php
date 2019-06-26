@@ -2,7 +2,7 @@
 
 namespace Scrumpy\ProseMirrorToHtml\Nodes;
 
-class UnorderedList extends Node
+class BulletList extends Node
 {
     public function matching()
     {
