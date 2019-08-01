@@ -10,6 +10,7 @@ class Renderer
         Nodes\Blockquote::class,
         Nodes\BulletList::class,
         Nodes\CodeBlock::class,
+        Nodes\HardBreak::class,
         Nodes\Heading::class,
         Nodes\ListItem::class,
         Nodes\OrderedList::class,
