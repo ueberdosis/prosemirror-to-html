@@ -4,7 +4,6 @@ namespace Scrumpy\ProseMirrorToHtml\Test\Nodes;
 
 use Scrumpy\ProseMirrorToHtml\Renderer;
 use Scrumpy\ProseMirrorToHtml\Test\TestCase;
-use Scrumpy\ProseMirrorToHtml\Test\Nodes\Custom\HardBreak;
 
 class HardBreakNodeTest extends TestCase
 {
@@ -35,9 +34,6 @@ class HardBreakNodeTest extends TestCase
 
         $html = '<p>some text<br>some more text</p>';
 
-        $renderer = new Renderer;
-        $renderer->addNode(HardBreak::class);
-
-        $this->assertEquals($html, $renderer->render($json));
+        $this->assertEquals($html, (new Renderer)->render($json));
     }
 }
