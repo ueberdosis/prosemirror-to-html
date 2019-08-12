@@ -42,6 +42,7 @@ composer require scrumpy/prosemirror-to-html
 - Blockquote
 - BulletList
 - CodeBlock
+- HardBreak
 - Heading
 - ListItem
 - OrderedList
