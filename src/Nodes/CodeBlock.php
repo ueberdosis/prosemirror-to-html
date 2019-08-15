@@ -11,13 +11,6 @@ class CodeBlock extends Node
 
     public function tag()
     {
-        return [
-            [
-                'tag' => 'pre',
-            ],
-            [
-                'tag' => 'code',
-            ],
-        ];
+        return ['pre', 'code'];
     }
 }

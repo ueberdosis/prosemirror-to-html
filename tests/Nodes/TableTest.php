@@ -36,7 +36,11 @@ class TableTest extends TestCase
                                 [
                                     'type'    => 'table_header',
                                     'attrs'   => [
-                                        'colspan' => '2',
+                                        'colspan'  => 2,
+                                        'colwidth' => [
+                                            100,
+                                            0,
+                                        ],
                                     ],
                                     'content' => [
                                         [
@@ -150,7 +154,7 @@ class TableTest extends TestCase
         ];
 
         $html = '<table><tbody>' .
-            '<tr>' . '<th><p>text in header cell</p></th>' . '<th colspan="2"><p>text in header cell with colspan 2</p></th>' . '</tr>' .
+            '<tr>' . '<th><p>text in header cell</p></th>' . '<th colspan="2" data-colwidth="100,0"><p>text in header cell with colspan 2</p></th>' . '</tr>' .
             '<tr>' . '<td rowspan="2"><p>paragraph 1 in cell with rowspan 2</p><p>paragraph 2 in cell with rowspan 2</p></td>' . '<td><p>foo</p></td>' . '<td><p>bar</p></td>' . '</tr>' .
             '<tr>' . '<td><p>foo</p></td>' . '<td><p>bar</p></td>' . '</tr>' .
             '</tbody></table>';
