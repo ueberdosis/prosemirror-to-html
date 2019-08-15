@@ -47,6 +47,10 @@ composer require scrumpy/prosemirror-to-html
 - ListItem
 - OrderedList
 - Paragraph
+- Table
+- TableRow
+- TableHeader
+- TableCell
 
 ## Supported Marks
 
