@@ -93,6 +93,7 @@ Pull Requests are welcome.
 ## Credits
 
 - [Hans Pagel](https://github.com/hanspagel)
+- [sauerbraten](https://github.com/sauerbraten)
 - [All Contributors](../../contributors)
 
 ## License
