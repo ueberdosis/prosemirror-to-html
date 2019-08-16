@@ -2,15 +2,15 @@
 
 namespace Scrumpy\ProseMirrorToHtml\Nodes;
 
-class CodeBlock extends Node
+class TableRow extends Node
 {
     public function matching()
     {
-        return $this->node->type === 'code_block';
+        return $this->node->type === 'table_row';
     }
 
     public function tag()
     {
-        return ['pre', 'code'];
+        return 'tr';
     }
 }
