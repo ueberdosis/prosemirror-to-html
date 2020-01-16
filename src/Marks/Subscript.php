@@ -2,15 +2,15 @@
 
 namespace Scrumpy\ProseMirrorToHtml\Marks;
 
-class Sup extends Mark
+class Subscript extends Mark
 {
     public function matching()
     {
-        return $this->mark->type === 'sup';
+        return $this->mark->type === 'subscript';
     }
 
     public function tag()
     {
-        return 'sup';
+        return 'sub';
     }
 }
