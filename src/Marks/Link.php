@@ -18,7 +18,7 @@ class Link extends Mark
         }
 
         if (isset($this->mark->attrs->rel)) {
-            $attrs['target'] = $this->nmarkde->attrs->rel;
+            $attrs['target'] = $this->mark->attrs->rel;
         }
 
         $attrs['href'] = $this->mark->attrs->href;
