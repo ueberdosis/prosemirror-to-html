@@ -4,7 +4,7 @@ namespace Scrumpy\ProseMirrorToHtml\Test\Marks;
 
 use Scrumpy\ProseMirrorToHtml\Renderer;
 use Scrumpy\ProseMirrorToHtml\Test\TestCase;
-use Scrumpy\ProseMirrorToHtml\Test\Marks\Custom\Superscript;
+use Scrumpy\ProseMirrorToHtml\Test\Marks\Custom\CustomMark;
 
 class CustomMarkTest extends TestCase
 {
@@ -19,17 +19,17 @@ class CustomMarkTest extends TestCase
                     'text' => 'Example Text',
                     'marks' => [
                         [
-                            'type' => 'superscript',
+                            'type' => 'custom_mark',
                         ],
                     ],
                 ],
             ],
         ];
 
-        $html = '<sup>Example Text</sup>';
+        $html = '<custom_mark>Example Text</custom_mark>';
 
         $renderer = new Renderer();
-        $renderer->addMark(Superscript::class);
+        $renderer->addMark(CustomMark::class);
 
         $this->assertEquals($html, $renderer->render($json));
     }
@@ -45,17 +45,17 @@ class CustomMarkTest extends TestCase
                     'text' => 'Example Text',
                     'marks' => [
                         [
-                            'type' => 'superscript',
+                            'type' => 'custom_mark',
                         ],
                     ],
                 ],
             ],
         ];
 
-        $html = '<sup>Example Text</sup>';
+        $html = '<custom_mark>Example Text</custom_mark>';
 
         $renderer = new Renderer();
-        $renderer->addMarks([Superscript::class]);
+        $renderer->addMarks([CustomMark::class]);
 
         $this->assertEquals($html, $renderer->render($json));
     }
