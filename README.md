@@ -94,6 +94,7 @@ Pull Requests are welcome.
 
 - [Hans Pagel](https://github.com/hanspagel)
 - [sauerbraten](https://github.com/sauerbraten)
+- [WiebkeVog](https://github.com/WiebkeVog)
 - [All Contributors](../../contributors)
 
 ## License
