@@ -1,8 +1,6 @@
 <?php
 
-namespace Scrumpy\ProseMirrorToHtml\Test\Marks\Custom;
-
-use Scrumpy\ProseMirrorToHtml\Marks\Mark;
+namespace Scrumpy\ProseMirrorToHtml\Marks;
 
 class Superscript extends Mark
 {
