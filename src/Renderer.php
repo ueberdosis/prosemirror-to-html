@@ -27,6 +27,7 @@ class Renderer
         Marks\Italic::class,
         Marks\Link::class,
         Marks\Subscript::class,
+        Marks\Underline::class,
         Marks\Superscript::class,
     ];
 
