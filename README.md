@@ -58,6 +58,8 @@ composer require scrumpy/prosemirror-to-html
 - Code
 - Italic
 - Link
+- Strike
+- Underline
 
 ## Custom Nodes
 
