@@ -5,6 +5,8 @@ namespace Scrumpy\ProseMirrorToHtml\Marks;
 class Mark
 {
     protected $mark;
+    protected $markType;
+    protected $tagName = null;
 
     public function __construct($mark)
     {
@@ -13,11 +15,14 @@ class Mark
 
     public function matching()
     {
+        if (isset($this->mark->type)) {
+            return $this->mark->type === $this->markType;
+        }
         return false;
     }
 
     public function tag()
     {
-        return null;
+        return $this->tagName;
     }
 }

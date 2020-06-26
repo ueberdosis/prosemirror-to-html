@@ -5,12 +5,7 @@ namespace Scrumpy\ProseMirrorToHtml\Nodes;
 class TableCell extends Node
 {
     protected $nodeType = 'table_cell';
-    protected $tagName  = 'td';
-
-    public function matching()
-    {
-        return $this->node->type === $this->nodeType;
-    }
+    protected $tagName = 'td';
 
     public function tag()
     {
@@ -33,7 +28,7 @@ class TableCell extends Node
 
         return [
             [
-                'tag'   => $this->tagName,
+                'tag' => $this->tagName,
                 'attrs' => $attrs,
             ],
         ];

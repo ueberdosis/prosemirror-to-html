@@ -4,10 +4,8 @@ namespace Scrumpy\ProseMirrorToHtml\Marks;
 
 class Link extends Mark
 {
-    public function matching()
-    {
-        return $this->mark->type === 'link';
-    }
+    protected $markType = 'link';
+    protected $tagName = 'a';
 
     public function tag()
     {
@@ -25,7 +23,7 @@ class Link extends Mark
 
         return [
             [
-                'tag' => 'a',
+                'tag' => $this->tagName,
                 'attrs' => $attrs,
             ],
         ];

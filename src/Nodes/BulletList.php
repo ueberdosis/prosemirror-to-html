@@ -4,13 +4,6 @@ namespace Scrumpy\ProseMirrorToHtml\Nodes;
 
 class BulletList extends Node
 {
-    public function matching()
-    {
-        return $this->node->type === 'bullet_list';
-    }
-
-    public function tag()
-    {
-        return 'ul';
-    }
+    protected $nodeType = 'bullet_list';
+    protected $tagName = 'ul';
 }

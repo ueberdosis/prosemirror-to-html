@@ -2,7 +2,9 @@
     "name": "scrumpy/prosemirror-to-html",
     "type": "library",
     "description": "Takes HTML and outputs ProseMirror compatible JSON.",
-    "keywords": ["prosemirror"],
+    "keywords": [
+        "prosemirror"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -30,6 +32,8 @@
     "scripts": {
         "format": [
             "vendor/bin/php-cs-fixer fix"
-        ]
+        ],
+        "test": "phpunit tests --colors=always --verbose --testdox",
+        "test-cov": "phpunit tests --colors=always --verbose --testdox --coverage-html tests/Reports"
     }
 }
