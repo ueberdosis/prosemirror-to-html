@@ -4,18 +4,11 @@ namespace Scrumpy\ProseMirrorToHtml\Nodes;
 
 class HardBreak extends Node
 {
-    public function matching()
-    {
-        return $this->node->type === 'hard_break';
-    }
+    protected $nodeType = 'hard_break';
+    protected $tagName = 'br';
 
     public function selfClosing()
     {
         return true;
-    }
-
-    public function tag()
-    {
-        return 'br';
     }
 }

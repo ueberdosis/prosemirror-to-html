@@ -5,6 +5,8 @@ namespace Scrumpy\ProseMirrorToHtml\Nodes;
 class Node
 {
     protected $node;
+    protected $nodeType;
+    protected $tagName = null;
 
     public function __construct($node)
     {
@@ -13,6 +15,9 @@ class Node
 
     public function matching()
     {
+        if (isset($this->node->type)) {
+            return $this->node->type === $this->nodeType;
+        }
         return false;
     }
 
@@ -23,7 +28,7 @@ class Node
 
     public function tag()
     {
-        return null;
+        return $this->tagName;
     }
 
     public function text()

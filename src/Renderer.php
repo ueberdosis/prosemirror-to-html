@@ -154,7 +154,9 @@ class Renderer
 
         $html = [];
 
-        foreach ($this->document->content as $node) {
+        $content = is_array($this->document->content) ? $this->document->content : [];
+
+        foreach ($content as $node) {
             $html[] = $this->renderNode($node);
         }
 
