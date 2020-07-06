@@ -59,6 +59,8 @@ composer require scrumpy/prosemirror-to-html
 - Italic
 - Link
 - Strike
+- Subscript
+- Superscript
 - Underline
 
 ## Custom Nodes
@@ -70,15 +72,8 @@ Define your custom nodes as PHP classes:
 
 class CustomNode extends \Scrumpy\ProseMirrorToHtml\Nodes\Node
 {
-    public function matching()
-    {
-        return $this->node->type === 'custom';
-    }
-
-    public function tag()
-    {
-        return 'marquee';
-    }
+    protected $markType = 'custom';
+    protected $tagName = 'marquee';
 }
 ```
 
@@ -86,6 +81,20 @@ And register them:
 
 ```php
 $renderer->addNode(CustomNode::class);
+```
+
+Or overwrite the enabled nodes:
+```php
+$renderer->withNodes([
+    CustomNode::class,
+]);
+```
+
+Or overwrite the enabled marks:
+```php
+$renderer->withMarks([
+    Bold::class,
+]);
 ```
 
 ## Contributing
