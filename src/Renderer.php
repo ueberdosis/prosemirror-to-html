@@ -32,6 +32,24 @@ class Renderer
         Marks\Superscript::class,
     ];
 
+    public function withMarks($marks = null)
+    {
+        if (is_array($marks)) {
+            $this->marks = $marks;
+        }
+
+        return $this;
+    }
+
+    public function withNodes($nodes = null)
+    {
+        if (is_array($nodes)) {
+            $this->nodes = $nodes;
+        }
+
+        return $this;
+    }
+
     public function document($value)
     {
         if (is_string($value)) {
