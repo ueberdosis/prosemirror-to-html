@@ -28,6 +28,7 @@ class Renderer
         Marks\Link::class,
         Marks\Subscript::class,
         Marks\Underline::class,
+        Marks\Strike::class,
         Marks\Superscript::class,
     ];
 
