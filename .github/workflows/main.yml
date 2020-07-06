@@ -1,23 +1,27 @@
-name: Prosemirror-To-Html
+name: run-tests
 
 on:
   push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+    pull_request:
+    schedule:
+        -   cron: '0 0 * * *'
 
 jobs:
-  tests:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Install Dependencies
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: "7.1"
           tools: php-cs-fixer, phpunit:7.5.20
-      - name: Execute tests via PHPUnit
+
+      - name: Execute tests
         run: phpunit
