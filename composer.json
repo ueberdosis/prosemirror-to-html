@@ -1,5 +1,5 @@
 {
-    "name": "scrumpy/prosemirror-to-html",
+    "name": "ueberdosis/prosemirror-to-html",
     "type": "library",
     "description": "Takes HTML and outputs ProseMirror compatible JSON.",
     "keywords": [
