@@ -1,15 +1,17 @@
+> This repository has been migrated to a new organization (Read more: https://github.com/ueberdosis/tiptap/issues/759)
+
 # ProseMirror to HTML
 
 Takes ProseMirror JSON and outputs HTML.
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/scrumpy/prosemirror-to-html.svg)](https://packagist.org/packages/scrumpy/prosemirror-to-html)
-[![Build Status](https://github.com/scrumpy/prosemirror-to-html/workflows/run-tests/badge.svg)](https://github.com/scrumpy/prosemirror-to-html/actions)
-[![Total Downloads](https://img.shields.io/packagist/dt/scrumpy/prosemirror-to-html.svg?style=flat-square)](https://packagist.org/packages/scrumpy/prosemirror-to-html)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/ueberdosis/prosemirror-to-html.svg)](https://packagist.org/packagesueberdosis/prosemirror-to-html)
+[![Build Status](https://github.com/ueberdosis/prosemirror-to-html/workflows/run-tests/badge.svg)](https://github.comueberdosis/prosemirror-to-html/actions)
+[![Total Downloads](https://img.shields.io/packagist/dt/ueberdosis/prosemirror-to-html.svg?style=flat-square)](https://packagist.org/packages/ueberdosis/prosemirror-to-html)
 
 ## Installation
 
 ```bash
-composer require scrumpy/prosemirror-to-html
+composer require ueberdosis/prosemirror-to-html
 ```
 
 ## Usage
