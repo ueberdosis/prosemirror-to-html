@@ -12,6 +12,7 @@ class Renderer
         Nodes\CodeBlock::class,
         Nodes\HardBreak::class,
         Nodes\Heading::class,
+        Nodes\Iframe::class,
         Nodes\ListItem::class,
         Nodes\OrderedList::class,
         Nodes\Paragraph::class,
