@@ -11,7 +11,7 @@ class WrongFormatTest extends TestCase
     {
         $json = [
             'type' => 'doc',
-            'content' => 'test'
+            'content' => 'test',
         ];
 
         $this->assertEmpty((new Renderer)->render($json));
@@ -22,7 +22,7 @@ class WrongFormatTest extends TestCase
     {
         $json = [
             'type' => 'doc',
-            'content' => []
+            'content' => [],
         ];
 
         $this->assertEmpty((new Renderer)->render($json));
@@ -35,7 +35,7 @@ class WrongFormatTest extends TestCase
             'type' => 'doc',
             'content' => [
                 [], [],
-            ]
+            ],
         ];
 
         $this->assertEmpty((new Renderer)->render($json));
@@ -65,7 +65,7 @@ class WrongFormatTest extends TestCase
                 [],
                 [],
                 '',
-            ]
+            ],
         ];
 
         $html = '<pre><code>Example Text</code></pre>';
@@ -103,7 +103,7 @@ class WrongFormatTest extends TestCase
                 [],
                 [],
                 '',
-            ]
+            ],
         ];
 
         $html = '<a href="https://scrumpy.io">Example Link</a>';
