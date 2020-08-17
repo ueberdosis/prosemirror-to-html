@@ -1,8 +1,8 @@
 <?php
 
-namespace Scrumpy\ProseMirrorToHtml\Test\Marks\Custom;
+namespace ProseMirrorToHtml\Test\Marks\Custom;
 
-use Scrumpy\ProseMirrorToHtml\Marks\Mark;
+use ProseMirrorToHtml\Marks\Mark;
 
 class CustomMark extends Mark
 {

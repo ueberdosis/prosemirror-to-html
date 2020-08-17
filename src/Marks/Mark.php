@@ -1,6 +1,6 @@
 <?php
 
-namespace Scrumpy\ProseMirrorToHtml\Marks;
+namespace ProseMirrorToHtml\Marks;
 
 class Mark
 {

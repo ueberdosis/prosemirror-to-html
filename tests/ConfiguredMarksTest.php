@@ -1,8 +1,8 @@
 <?php
 
-namespace Scrumpy\ProseMirrorToHtml\Test;
+namespace ProseMirrorToHtml\Test;
 
-use Scrumpy\ProseMirrorToHtml\Renderer;
+use ProseMirrorToHtml\Renderer;
 
 class ConfiguredMarksTest extends TestCase
 {
@@ -50,7 +50,7 @@ class ConfiguredMarksTest extends TestCase
         $html = '<strong>Example Text</strong>';
 
         $this->assertEquals($html, (new Renderer)->withMarks([
-            \Scrumpy\ProseMirrorToHtml\Marks\Bold::class,
+            \ProseMirrorToHtml\Marks\Bold::class,
         ])->render($json));
     }
 
@@ -98,8 +98,8 @@ class ConfiguredMarksTest extends TestCase
         $html = '<b>Example Text</b>';
 
         $this->assertEquals($html, (new Renderer)->replaceMark(
-            \Scrumpy\ProseMirrorToHtml\Marks\Bold::class,
-            \Scrumpy\ProseMirrorToHtml\Test\Marks\Custom\Bold::class
+            \ProseMirrorToHtml\Marks\Bold::class,
+            \ProseMirrorToHtml\Test\Marks\Custom\Bold::class
         )->render($json));
     }
 }

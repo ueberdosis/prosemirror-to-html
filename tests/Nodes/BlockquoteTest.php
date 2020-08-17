@@ -1,9 +1,9 @@
 <?php
 
-namespace Scrumpy\ProseMirrorToHtml\Test\Nodes;
+namespace ProseMirrorToHtml\Test\Nodes;
 
-use Scrumpy\ProseMirrorToHtml\Renderer;
-use Scrumpy\ProseMirrorToHtml\Test\TestCase;
+use ProseMirrorToHtml\Renderer;
+use ProseMirrorToHtml\Test\TestCase;
 
 class BlockquoteTest extends TestCase
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Scrumpy\ProseMirrorToHtml\Test\Nodes\Custom;
+namespace ProseMirrorToHtml\Test\Nodes\Custom;
 
-use Scrumpy\ProseMirrorToHtml\Nodes\Node;
+use ProseMirrorToHtml\Nodes\Node;
 
 class Div extends Node
 {

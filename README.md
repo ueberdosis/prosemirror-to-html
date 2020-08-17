@@ -17,7 +17,7 @@ composer require ueberdosis/prosemirror-to-html
 ## Usage
 
 ```php
-(new \Scrumpy\ProseMirrorToHtml\Renderer)->render([
+(new \ProseMirrorToHtml\Renderer)->render([
     'type' => 'doc',
     'content' => [
         [
@@ -72,7 +72,7 @@ Define your custom nodes as PHP classes:
 ```php
 <?php
 
-class CustomNode extends \Scrumpy\ProseMirrorToHtml\Nodes\Node
+class CustomNode extends \ProseMirrorToHtml\Nodes\Node
 {
     protected $markType = 'custom';
     protected $tagName = 'marquee';

@@ -1,6 +1,6 @@
 <?php
 
-namespace Scrumpy\ProseMirrorToHtml\Test;
+namespace ProseMirrorToHtml\Test;
 
 use League\CLImate\CLImate;
 use PHPUnit\Framework\TestCase as BaseTestCase;

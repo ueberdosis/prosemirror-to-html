@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Scrumpy\\ProseMirrorToHtml\\": "src/"
+            "ProseMirrorToHtml\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Scrumpy\\ProseMirrorToHtml\\Test\\": "tests/"
+            "ProseMirrorToHtml\\Test\\": "tests/"
         }
     },
     "scripts": {

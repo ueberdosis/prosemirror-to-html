@@ -1,9 +1,9 @@
 <?php
 
-namespace Scrumpy\ProseMirrorToHtml\Test\Mix;
+namespace ProseMirrorToHtml\Test\Mix;
 
-use Scrumpy\ProseMirrorToHtml\Renderer;
-use Scrumpy\ProseMirrorToHtml\Test\TestCase;
+use ProseMirrorToHtml\Renderer;
+use ProseMirrorToHtml\Test\TestCase;
 
 class ExampleJsonTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Scrumpy\ProseMirrorToHtml;
+namespace ProseMirrorToHtml;
 
 class Renderer
 {

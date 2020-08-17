@@ -1,8 +1,8 @@
 <?php
 
-namespace Scrumpy\ProseMirrorToHtml\Test;
+namespace ProseMirrorToHtml\Test;
 
-use Scrumpy\ProseMirrorToHtml\Renderer;
+use ProseMirrorToHtml\Renderer;
 
 class InputTest extends TestCase
 {

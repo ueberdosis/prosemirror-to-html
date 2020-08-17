@@ -1,6 +1,6 @@
 <?php
 
-namespace Scrumpy\ProseMirrorToHtml\Nodes;
+namespace ProseMirrorToHtml\Nodes;
 
 class Paragraph extends Node
 {

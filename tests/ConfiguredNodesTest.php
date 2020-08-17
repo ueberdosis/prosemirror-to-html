@@ -1,8 +1,8 @@
 <?php
 
-namespace Scrumpy\ProseMirrorToHtml\Test;
+namespace ProseMirrorToHtml\Test;
 
-use Scrumpy\ProseMirrorToHtml\Renderer;
+use ProseMirrorToHtml\Renderer;
 
 class ConfiguredNodesTest extends TestCase
 {
@@ -50,7 +50,7 @@ class ConfiguredNodesTest extends TestCase
         $html = '<p>Example Text</p>';
 
         $this->assertEquals($html, (new Renderer)->withNodes([
-            \Scrumpy\ProseMirrorToHtml\Nodes\Paragraph::class,
+            \ProseMirrorToHtml\Nodes\Paragraph::class,
         ])->render($json));
     }
 
@@ -98,8 +98,8 @@ class ConfiguredNodesTest extends TestCase
         $html = '<div>Example Text</div>';
 
         $this->assertEquals($html, (new Renderer)->replaceNode(
-            \Scrumpy\ProseMirrorToHtml\Nodes\Paragraph::class,
-            \Scrumpy\ProseMirrorToHtml\Test\Nodes\Custom\Paragraph::class
+            \ProseMirrorToHtml\Nodes\Paragraph::class,
+            \ProseMirrorToHtml\Test\Nodes\Custom\Paragraph::class
         )->render($json));
     }
 }

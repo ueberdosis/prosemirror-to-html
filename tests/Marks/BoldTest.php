@@ -1,9 +1,9 @@
 <?php
 
-namespace Scrumpy\ProseMirrorToHtml\Test\Marks;
+namespace ProseMirrorToHtml\Test\Marks;
 
-use Scrumpy\ProseMirrorToHtml\Renderer;
-use Scrumpy\ProseMirrorToHtml\Test\TestCase;
+use ProseMirrorToHtml\Renderer;
+use ProseMirrorToHtml\Test\TestCase;
 
 class BoldTest extends TestCase
 {
