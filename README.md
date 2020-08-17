@@ -99,6 +99,18 @@ $renderer->withMarks([
 ]);
 ```
 
+Or replace just one mark or node:
+
+```php
+$renderer->replaceNode(
+    CodeBlock::class, CustomCodeBlock::class
+);
+
+$renderer->replaceMark(
+    Bold::class, CustomBold::class
+);
+```
+
 ## Contributing
 
 Pull Requests are welcome.
