@@ -214,6 +214,7 @@ class Renderer
             }
         }
     }
+
     public function replaceMark($search_mark, $replace_mark)
     {
         foreach ($this->marks as $key => $mark_class) {
