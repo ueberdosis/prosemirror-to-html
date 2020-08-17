@@ -1,4 +1,4 @@
-> This repository has been migrated to a new organization (Read more: https://github.com/ueberdosis/tiptap/issues/759)
+> We need your support to maintain this package. 💖 https://github.com/sponsors/ueberdosis
 
 # ProseMirror to HTML
 
