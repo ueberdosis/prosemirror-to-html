@@ -7,7 +7,7 @@ use Scrumpy\ProseMirrorToHtml\Renderer;
 class ConfiguredNodesTest extends TestCase
 {
     /** @test */
-    public function bold_is_enabled_by_default()
+    public function paragraph_is_enabled_by_default()
     {
         $json = [
             'type' => 'doc',
@@ -30,7 +30,7 @@ class ConfiguredNodesTest extends TestCase
     }
 
     /** @test */
-    public function bold_is_enabled_explicitly()
+    public function paragraph_is_enabled_explicitly()
     {
         $json = [
             'type' => 'doc',
@@ -75,5 +75,31 @@ class ConfiguredNodesTest extends TestCase
         $html = 'Example Text';
 
         $this->assertEquals($html, (new Renderer)->withNodes([])->render($json));
+    }
+
+    /** @test */
+    public function paragraph_is_replaced_with_a_custom_integration()
+    {
+        $json = [
+            'type' => 'doc',
+            'content' => [
+                [
+                    'type' => 'paragraph',
+                    'content' => [
+                        [
+                            'type' => 'text',
+                            'text' => 'Example Text',
+                        ],
+                    ],
+                ],
+            ],
+        ];
+
+        $html = '<div>Example Text</div>';
+
+        $this->assertEquals($html, (new Renderer)->replaceNode(
+            \Scrumpy\ProseMirrorToHtml\Nodes\Paragraph::class,
+            \Scrumpy\ProseMirrorToHtml\Test\Nodes\Custom\Paragraph::class
+        )->render($json));
     }
 }

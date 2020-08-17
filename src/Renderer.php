@@ -185,6 +185,8 @@ class Renderer
     public function addNode($node)
     {
         $this->nodes[] = $node;
+
+        return $this;
     }
 
     public function addNodes($nodes)
@@ -192,11 +194,15 @@ class Renderer
         foreach ($nodes as $node) {
             $this->addNode($node);
         }
+
+        return $this;
     }
 
     public function addMark($mark)
     {
         $this->marks[] = $mark;
+
+        return $this;
     }
 
     public function addMarks($marks)
@@ -204,6 +210,8 @@ class Renderer
         foreach ($marks as $mark) {
             $this->addMark($mark);
         }
+
+        return $this;
     }
 
     public function replaceNode($search_node, $replace_node)
@@ -213,6 +221,8 @@ class Renderer
                 $this->nodes[$key] = $replace_node;
             }
         }
+
+        return $this;
     }
 
     public function replaceMark($search_mark, $replace_mark)
@@ -222,5 +232,7 @@ class Renderer
                 $this->marks[$key] = $replace_mark;
             }
         }
+
+        return $this;
     }
 }

@@ -76,4 +76,30 @@ class ConfiguredMarksTest extends TestCase
 
         $this->assertEquals($html, (new Renderer)->withMarks([])->render($json));
     }
+
+    /** @test */
+    public function bold_is_replaced_with_a_custom_integration()
+    {
+        $json = [
+            'type' => 'doc',
+            'content' => [
+                [
+                    'type' => 'text',
+                    'text' => 'Example Text',
+                    'marks' => [
+                        [
+                            'type' => 'bold',
+                        ],
+                    ],
+                ],
+            ],
+        ];
+
+        $html = '<b>Example Text</b>';
+
+        $this->assertEquals($html, (new Renderer)->replaceMark(
+            \Scrumpy\ProseMirrorToHtml\Marks\Bold::class,
+            \Scrumpy\ProseMirrorToHtml\Test\Marks\Custom\Bold::class
+        )->render($json));
+    }
 }
