@@ -123,6 +123,10 @@ Pull Requests are welcome.
 - [WiebkeVog](https://github.com/WiebkeVog)
 - [All Contributors](../../contributors)
 
+## Related packages
+
+- [prosemirror-to-html-js](https://github.com/enVolt/prosemirror-to-html) by @enVolt
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
