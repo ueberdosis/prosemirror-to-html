@@ -47,6 +47,7 @@ composer require ueberdosis/prosemirror-to-html
 - CodeBlock
 - HardBreak
 - Heading
+- Image
 - ListItem
 - OrderedList
 - Paragraph
