@@ -4,9 +4,8 @@ declare(strict_types = 1);
 
 namespace ProseMirrorToHtml\Registry;
 
-
-use ProseMirrorToHtml\Exceptions\RendererNotFoundException;
 use ProseMirrorToHtml\Renderers\RendererInterface;
+use ProseMirrorToHtml\Exceptions\RendererNotFoundException;
 
 class RendererRegistry
 {

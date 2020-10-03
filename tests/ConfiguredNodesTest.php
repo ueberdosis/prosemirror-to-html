@@ -2,9 +2,9 @@
 
 namespace ProseMirrorToHtml\Test;
 
+use ProseMirrorToHtml\Renderer;
 use ProseMirrorToHtml\Registry\Factory;
 use ProseMirrorToHtml\Registry\RendererRegistry;
-use ProseMirrorToHtml\Renderer;
 use ProseMirrorToHtml\Renderers\Nodes\Paragraph;
 use ProseMirrorToHtml\Test\Nodes\Custom as Custom;
 

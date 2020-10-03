@@ -2,9 +2,9 @@
 
 namespace ProseMirrorToHtml\Test\Nodes;
 
-use ProseMirrorToHtml\Registry\Factory;
 use ProseMirrorToHtml\Renderer;
 use ProseMirrorToHtml\Test\TestCase;
+use ProseMirrorToHtml\Registry\Factory;
 
 class CustomNodeTest extends TestCase
 {

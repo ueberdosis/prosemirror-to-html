@@ -2,9 +2,9 @@
 
 namespace ProseMirrorToHtml;
 
-use ProseMirrorToHtml\Exceptions\RendererNotFoundException;
 use ProseMirrorToHtml\Registry\Factory;
 use ProseMirrorToHtml\Registry\RendererRegistry;
+use ProseMirrorToHtml\Exceptions\RendererNotFoundException;
 
 class Renderer
 {
@@ -23,8 +23,7 @@ class Renderer
     public function __construct(
         RendererRegistry $nodesRendererRegistry = null,
         RendererRegistry $marksRendererRegistry = null
-    )
-    {
+    ) {
         $this->nodesRendererRegistry = $nodesRendererRegistry ?? Factory::buildNodesRegistry();
         $this->marksRendererRegistry = $marksRendererRegistry ?? Factory::buildMarksRegistry();
     }

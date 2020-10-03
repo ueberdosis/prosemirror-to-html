@@ -2,10 +2,10 @@
 
 namespace ProseMirrorToHtml\Test;
 
-use ProseMirrorToHtml\Registry\Factory;
-use ProseMirrorToHtml\Registry\RendererRegistry;
 use ProseMirrorToHtml\Renderer;
+use ProseMirrorToHtml\Registry\Factory;
 use ProseMirrorToHtml\Renderers\Marks\Bold;
+use ProseMirrorToHtml\Registry\RendererRegistry;
 use ProseMirrorToHtml\Test\Marks\Custom as Custom;
 
 class ConfiguredMarksTest extends TestCase

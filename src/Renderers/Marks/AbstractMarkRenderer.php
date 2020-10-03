@@ -3,10 +3,8 @@
 
 namespace ProseMirrorToHtml\Renderers\Marks;
 
-
-use ProseMirrorToHtml\Helpers\StringHelper;
-use ProseMirrorToHtml\Renderers\RendererInterface;
 use ReflectionClass;
+use ProseMirrorToHtml\Helpers\StringHelper;
 
 abstract class AbstractMarkRenderer implements MarkRendererInterface
 {

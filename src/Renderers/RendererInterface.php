@@ -3,7 +3,6 @@
 
 namespace ProseMirrorToHtml\Renderers;
 
-
 interface RendererInterface
 {
     /**
@@ -16,5 +15,4 @@ interface RendererInterface
      * @return string|array
      */
     public function getTag($node);
-
 }

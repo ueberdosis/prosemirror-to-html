@@ -3,9 +3,8 @@
 
 namespace ProseMirrorToHtml\Renderers\Nodes;
 
-
-use ProseMirrorToHtml\Helpers\StringHelper;
 use ReflectionClass;
+use ProseMirrorToHtml\Helpers\StringHelper;
 
 abstract class AbstractNodeRenderer implements NodeRendererInterface
 {

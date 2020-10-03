@@ -3,7 +3,6 @@
 
 namespace ProseMirrorToHtml\Renderers\Nodes;
 
-
 use ProseMirrorToHtml\Renderers\RendererInterface;
 
 interface NodeRendererInterface extends RendererInterface
