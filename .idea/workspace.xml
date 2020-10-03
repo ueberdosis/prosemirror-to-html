@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1ad75a85-cdb4-4bce-897d-3a24a8606e61" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Exceptions/RendererNotFoundException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Helpers/StringHelper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Registry/Factory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Registry/RendererRegistry.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/AbstractMarkRenderer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/Code.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/Italic.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/Link.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/MarkRendererInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/Strike.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/Subscript.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/Superscript.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/Underline.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/AbstractNodeRenderer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/BulletList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/CodeBlock.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/HardBreak.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/Heading.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/Image.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/ListItem.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/NodeRendererInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/OrderedList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/Paragraph.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/Table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/TableCell.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/TableHeader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/TableRow.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/Text.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Renderers/RendererInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Marks/Bold.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renderers/Marks/Bold.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Marks/Code.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Marks/Italic.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Marks/Link.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Marks/Mark.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Marks/Strike.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Marks/Subscript.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Marks/Superscript.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Marks/Underline.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nodes/Blockquote.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renderers/Nodes/Blockquote.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nodes/BulletList.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nodes/CodeBlock.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nodes/HardBreak.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nodes/Heading.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nodes/Image.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nodes/ListItem.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nodes/Node.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nodes/OrderedList.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nodes/Paragraph.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nodes/Table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nodes/TableCell.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nodes/TableHeader.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nodes/TableRow.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Renderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renderer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ConfiguredMarksTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ConfiguredMarksTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ConfiguredNodesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ConfiguredNodesTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Marks/BoldTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Marks/BoldTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Marks/Custom/Bold.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Marks/Custom/Bold.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Marks/Custom/CustomMark.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Marks/Custom/CustomMark.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Marks/CustomMarkTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Marks/CustomMarkTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Marks/ItalicTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Marks/ItalicTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Marks/StrikeTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Marks/StrikeTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Nodes/Custom/Div.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Nodes/Custom/Div.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Nodes/Custom/Paragraph.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Nodes/Custom/Paragraph.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Nodes/Custom/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Nodes/Custom/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Nodes/CustomNodeTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Nodes/CustomNodeTest.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/php-cs-fixer/diff" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/friendsofphp/php-cs-fixer" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/seld/cli-prompt" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/league/climate" />
+      <path value="$PROJECT_DIR$/vendor/jawira/case-converter" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1iMq823Eebkj9N8MYbOeFbrH5h9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Renderers/Marks" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Renderers/Marks" />
+      <recent name="$PROJECT_DIR$/src/Renderers/oldMarks" />
+      <recent name="$PROJECT_DIR$/src/Renderers/Nodes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Renderers/oldNodes" />
+      <recent name="$PROJECT_DIR$/src/Renderers" />
+      <recent name="$PROJECT_DIR$/src/Renderers/Nodes" />
+      <recent name="$PROJECT_DIR$/src/Renderers/NodeRendererInterface" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ad75a85-cdb4-4bce-897d-3a24a8606e61" name="Default Changelist" comment="" />
+      <created>1601727645428</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601727645428</updated>
+      <workItem from="1601727649511" duration="8787000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="685" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1601729751312">
+      <screen x="65" y="23" width="1615" height="1027" />
+    </state>
+    <state x="685" y="230" key="#com.intellij.ide.util.MemberChooser/65.23.1615.1027@65.23.1615.1027" timestamp="1601729751312" />
+    <state x="635" y="107" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601734030838">
+      <screen x="65" y="23" width="1615" height="1027" />
+    </state>
+    <state x="635" y="107" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/65.23.1615.1027@65.23.1615.1027" timestamp="1601734030838" />
+    <state x="610" y="269" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601736300257">
+      <screen x="65" y="23" width="1615" height="1027" />
+    </state>
+    <state x="610" y="269" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/65.23.1615.1027@65.23.1615.1027" timestamp="1601736300257" />
+    <state x="612" y="385" key="NewPhpClassDialog" timestamp="1601732148112">
+      <screen x="65" y="23" width="1615" height="1027" />
+    </state>
+    <state x="612" y="385" key="NewPhpClassDialog/65.23.1615.1027@65.23.1615.1027" timestamp="1601732148112" />
+    <state x="613" y="219" key="VCS.ChangeListViewerDialog" timestamp="1601729829632">
+      <screen x="65" y="23" width="1615" height="1027" />
+    </state>
+    <state x="613" y="219" key="VCS.ChangeListViewerDialog/65.23.1615.1027@65.23.1615.1027" timestamp="1601729829632" />
+    <state x="537" y="236" width="670" height="676" key="search.everywhere.popup" timestamp="1601736474174">
+      <screen x="65" y="23" width="1615" height="1027" />
+    </state>
+    <state x="537" y="236" width="670" height="676" key="search.everywhere.popup/65.23.1615.1027@65.23.1615.1027" timestamp="1601736474174" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Registry/RendererRegistry.php</url>
+          <line>48</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Renderers/Nodes/AbstractNodeRenderer.php</url>
+          <line>16</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Renderer.php</url>
+          <line>64</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

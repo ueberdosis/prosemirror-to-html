@@ -3,15 +3,14 @@
 namespace ProseMirrorToHtml\Test\Nodes\Custom;
 
 use ProseMirrorToHtml\Nodes\Node;
+use ProseMirrorToHtml\Renderers\Nodes\AbstractNodeRenderer;
 
-class Div extends Node
+class Div extends AbstractNodeRenderer
 {
-    public function matching()
-    {
-        return $this->node->type === 'div';
-    }
-
-    public function tag()
+    /**
+     * @inheritDoc
+     */
+    public function getTag($node)
     {
         return 'div';
     }

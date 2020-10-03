@@ -2,7 +2,11 @@
 
 namespace ProseMirrorToHtml\Test;
 
+use ProseMirrorToHtml\Registry\Factory;
+use ProseMirrorToHtml\Registry\RendererRegistry;
 use ProseMirrorToHtml\Renderer;
+use ProseMirrorToHtml\Renderers\Marks\Bold;
+use ProseMirrorToHtml\Test\Marks\Custom as Custom;
 
 class ConfiguredMarksTest extends TestCase
 {
@@ -49,9 +53,13 @@ class ConfiguredMarksTest extends TestCase
 
         $html = '<strong>Example Text</strong>';
 
-        $this->assertEquals($html, (new Renderer)->withMarks([
-            \ProseMirrorToHtml\Marks\Bold::class,
-        ])->render($json));
+        $marksRegistry = new RendererRegistry();
+        $marksRegistry->add(new Bold());
+
+        $renderer = new Renderer(null, $marksRegistry);
+
+
+        $this->assertEquals($html, $renderer->render($json));
     }
 
     /** @test */
@@ -74,7 +82,11 @@ class ConfiguredMarksTest extends TestCase
 
         $html = 'Example Text';
 
-        $this->assertEquals($html, (new Renderer)->withMarks([])->render($json));
+        $marksRegistry =  new RendererRegistry();
+
+        $renderer = new Renderer(null, $marksRegistry);
+
+        $this->assertEquals($html, $renderer->render($json));
     }
 
     /** @test */
@@ -97,9 +109,11 @@ class ConfiguredMarksTest extends TestCase
 
         $html = '<b>Example Text</b>';
 
-        $this->assertEquals($html, (new Renderer)->replaceMark(
-            \ProseMirrorToHtml\Marks\Bold::class,
-            \ProseMirrorToHtml\Test\Marks\Custom\Bold::class
-        )->render($json));
+        $marksRegistry = Factory::buildMarksRegistry();
+        $marksRegistry->add(new Custom\Bold());
+
+        $renderer = new Renderer(null, $marksRegistry);
+
+        $this->assertEquals($html, $renderer->render($json));
     }
 }

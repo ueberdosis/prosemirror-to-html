@@ -3,16 +3,23 @@
 namespace ProseMirrorToHtml\Test\Nodes\Custom;
 
 use ProseMirrorToHtml\Nodes\Node;
+use ProseMirrorToHtml\Renderers\Nodes\AbstractNodeRenderer;
 
-class User extends Node
+class User extends AbstractNodeRenderer
 {
-    public function matching()
-    {
-        return $this->node->type === 'user';
-    }
-
-    public function text()
+    /**
+     * @inheritDoc
+     */
+    public function getText($node)
     {
         return 'Foobar';
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getTag($node)
+    {
+       return null;
     }
 }

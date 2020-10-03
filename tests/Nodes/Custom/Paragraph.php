@@ -3,9 +3,15 @@
 namespace ProseMirrorToHtml\Test\Nodes\Custom;
 
 use ProseMirrorToHtml\Nodes\Node;
+use ProseMirrorToHtml\Renderers\Nodes\AbstractNodeRenderer;
 
-class Paragraph extends Node
+class Paragraph extends AbstractNodeRenderer
 {
-    protected $nodeType = 'paragraph';
-    protected $tagName = 'div';
+    /**
+     * @inheritDoc
+     */
+    public function getTag($node)
+    {
+        return 'div';
+    }
 }

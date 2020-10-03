@@ -2,53 +2,31 @@
 
 namespace ProseMirrorToHtml;
 
+use ProseMirrorToHtml\Exceptions\RendererNotFoundException;
+use ProseMirrorToHtml\Registry\Factory;
+use ProseMirrorToHtml\Registry\RendererRegistry;
+
 class Renderer
 {
     protected $document;
 
-    protected $nodes = [
-        Nodes\Blockquote::class,
-        Nodes\BulletList::class,
-        Nodes\CodeBlock::class,
-        Nodes\HardBreak::class,
-        Nodes\Heading::class,
-        Nodes\Image::class,
-        Nodes\ListItem::class,
-        Nodes\OrderedList::class,
-        Nodes\Paragraph::class,
-        Nodes\Table::class,
-        Nodes\TableCell::class,
-        Nodes\TableHeader::class,
-        Nodes\TableRow::class,
-    ];
+    /**
+     * @var RendererRegistry
+     */
+    protected $nodesRendererRegistry;
 
-    protected $marks = [
-        Marks\Bold::class,
-        Marks\Code::class,
-        Marks\Italic::class,
-        Marks\Link::class,
-        Marks\Subscript::class,
-        Marks\Underline::class,
-        Marks\Strike::class,
-        Marks\Superscript::class,
-    ];
+    /**
+     * @var RendererRegistry
+     */
+    protected $marksRendererRegistry;
 
-    public function withMarks($marks = null)
+    public function __construct(
+        RendererRegistry $nodesRendererRegistry = null,
+        RendererRegistry $marksRendererRegistry = null
+    )
     {
-        if (is_array($marks)) {
-            $this->marks = $marks;
-        }
-
-        return $this;
-    }
-
-    public function withNodes($nodes = null)
-    {
-        if (is_array($nodes)) {
-            $this->nodes = $nodes;
-        }
-
-        return $this;
+        $this->nodesRendererRegistry = $nodesRendererRegistry ?? Factory::buildNodesRegistry();
+        $this->marksRendererRegistry = $marksRendererRegistry ?? Factory::buildMarksRegistry();
     }
 
     public function document($value)
@@ -68,56 +46,55 @@ class Renderer
     {
         $html = [];
 
-        if (isset($node->marks)) {
-            foreach ($node->marks as $mark) {
-                foreach ($this->marks as $class) {
-                    $renderClass = new $class($mark);
-
-                    if ($renderClass->matching()) {
-                        $html[] = $this->renderOpeningTag($renderClass->tag());
+        if (is_object($node)) {
+            if (isset($node->marks)) {
+                foreach ($node->marks as $mark) {
+                    if (is_object($mark)) {
+                        try {
+                            $markRenderer = $this->marksRendererRegistry->get($mark->type);
+                            $renderedTag = $markRenderer->getTag($mark);
+                            $html[] = $this->renderOpeningTag($renderedTag);
+                        } catch (RendererNotFoundException $e) {
+                            //continue
+                        }
                     }
                 }
             }
-        }
 
-        foreach ($this->nodes as $class) {
-            $renderClass = new $class($node);
-
-            if ($renderClass->matching()) {
-                $html[] = $this->renderOpeningTag($renderClass->tag());
-                break;
-            }
-        }
-
-        if (isset($node->content)) {
-            foreach ($node->content as $nestedNode) {
-                $html[] = $this->renderNode($nestedNode);
-            }
-        } elseif (isset($node->text)) {
-            $html[] = htmlentities($node->text, ENT_QUOTES);
-        } elseif ($text = $renderClass->text()) {
-            $html[] = $text;
-        }
-
-        foreach ($this->nodes as $class) {
-            $renderClass = new $class($node);
-
-            if ($renderClass->selfClosing()) {
-                continue;
+            try {
+                $nodeRenderer = $this->nodesRendererRegistry->get($node->type);
+                $renderedNodeTag = $nodeRenderer->getTag($node);
+                $html[] = $this->renderOpeningTag($renderedNodeTag);
+            } catch (RendererNotFoundException $e) {
+                $nodeRenderer = null;
             }
 
-            if ($renderClass->matching()) {
-                $html[] = $this->renderClosingTag($renderClass->tag());
+
+            if (isset($node->content)) {
+                foreach ($node->content as $nestedNode) {
+                    $html[] = $this->renderNode($nestedNode);
+                }
+            } elseif (isset($node->text)) {
+                $html[] = htmlentities($node->text, ENT_QUOTES);
+            } elseif ($nodeRenderer && $text = $nodeRenderer->getText($node)) {
+                $html[] = $text;
             }
-        }
 
-        if (isset($node->marks)) {
-            foreach (array_reverse($node->marks) as $mark) {
-                foreach ($this->marks as $class) {
-                    $renderClass = new $class($mark);
+            if ($nodeRenderer && !$nodeRenderer->isSelfClosing()) {
+                $html[] = $this->renderClosingTag($renderedNodeTag);
+            }
 
-                    if ($renderClass->matching()) {
-                        $html[] = $this->renderClosingTag($renderClass->tag());
+
+            if (isset($node->marks)) {
+                foreach (array_reverse($node->marks) as $mark) {
+                    if (is_object($mark)) {
+                        try {
+                            $markRenderer = $this->marksRendererRegistry->get($mark->type);
+                            $renderedTag = $markRenderer->getTag($mark);
+                            $html[] = $this->renderClosingTag($renderedTag);
+                        } catch (RendererNotFoundException $e) {
+                            //continue
+                        }
                     }
                 }
             }
@@ -181,59 +158,5 @@ class Renderer
         }
 
         return join($html);
-    }
-
-    public function addNode($node)
-    {
-        $this->nodes[] = $node;
-
-        return $this;
-    }
-
-    public function addNodes($nodes)
-    {
-        foreach ($nodes as $node) {
-            $this->addNode($node);
-        }
-
-        return $this;
-    }
-
-    public function addMark($mark)
-    {
-        $this->marks[] = $mark;
-
-        return $this;
-    }
-
-    public function addMarks($marks)
-    {
-        foreach ($marks as $mark) {
-            $this->addMark($mark);
-        }
-
-        return $this;
-    }
-
-    public function replaceNode($search_node, $replace_node)
-    {
-        foreach ($this->nodes as $key => $node_class) {
-            if ($node_class == $search_node) {
-                $this->nodes[$key] = $replace_node;
-            }
-        }
-
-        return $this;
-    }
-
-    public function replaceMark($search_mark, $replace_mark)
-    {
-        foreach ($this->marks as $key => $mark_class) {
-            if ($mark_class == $search_mark) {
-                $this->marks[$key] = $replace_mark;
-            }
-        }
-
-        return $this;
     }
 }

@@ -2,7 +2,11 @@
 
 namespace ProseMirrorToHtml\Test;
 
+use ProseMirrorToHtml\Registry\Factory;
+use ProseMirrorToHtml\Registry\RendererRegistry;
 use ProseMirrorToHtml\Renderer;
+use ProseMirrorToHtml\Renderers\Nodes\Paragraph;
+use ProseMirrorToHtml\Test\Nodes\Custom as Custom;
 
 class ConfiguredNodesTest extends TestCase
 {
@@ -49,9 +53,11 @@ class ConfiguredNodesTest extends TestCase
 
         $html = '<p>Example Text</p>';
 
-        $this->assertEquals($html, (new Renderer)->withNodes([
-            \ProseMirrorToHtml\Nodes\Paragraph::class,
-        ])->render($json));
+        $nodesRegistry = new RendererRegistry();
+        $nodesRegistry->add(new Paragraph());
+        $renderer = new Renderer($nodesRegistry);
+
+        $this->assertEquals($html, $renderer->render($json));
     }
 
     /** @test */
@@ -74,7 +80,10 @@ class ConfiguredNodesTest extends TestCase
 
         $html = 'Example Text';
 
-        $this->assertEquals($html, (new Renderer)->withNodes([])->render($json));
+        $nodesRegistry = new RendererRegistry();
+        $renderer = new Renderer($nodesRegistry);
+
+        $this->assertEquals($html, $renderer->render($json));
     }
 
     /** @test */
@@ -97,9 +106,11 @@ class ConfiguredNodesTest extends TestCase
 
         $html = '<div>Example Text</div>';
 
-        $this->assertEquals($html, (new Renderer)->replaceNode(
-            \ProseMirrorToHtml\Nodes\Paragraph::class,
-            \ProseMirrorToHtml\Test\Nodes\Custom\Paragraph::class
-        )->render($json));
+        $nodesRegistry = Factory::buildNodesRegistry();
+        $nodesRegistry->add(new Custom\Paragraph());
+
+        $renderer = new Renderer($nodesRegistry);
+
+        $this->assertEquals($html, $renderer->render($json));
     }
 }

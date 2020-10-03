@@ -2,6 +2,7 @@
 
 namespace ProseMirrorToHtml\Test\Nodes;
 
+use ProseMirrorToHtml\Registry\Factory;
 use ProseMirrorToHtml\Renderer;
 use ProseMirrorToHtml\Test\TestCase;
 
@@ -21,8 +22,10 @@ class CustomNodeTest extends TestCase
 
         $html = '<div></div>';
 
-        $renderer = new Renderer;
-        $renderer->addNode(Custom\Div::class);
+        $nodesRegistry = Factory::buildNodesRegistry();
+        $nodesRegistry->add(new Custom\Div());
+
+        $renderer = new Renderer($nodesRegistry);
 
         $this->assertEquals($html, $renderer->render($json));
     }
@@ -41,8 +44,10 @@ class CustomNodeTest extends TestCase
 
         $html = '<div></div>';
 
-        $renderer = new Renderer;
-        $renderer->addNodes([Custom\Div::class]);
+        $nodesRegistry = Factory::buildNodesRegistry();
+        $nodesRegistry->add(new Custom\Div());
+
+        $renderer = new Renderer($nodesRegistry);
 
         $this->assertEquals($html, $renderer->render($json));
     }
@@ -64,8 +69,10 @@ class CustomNodeTest extends TestCase
 
         $html = 'Foobar';
 
-        $renderer = new Renderer;
-        $renderer->addNode(Custom\User::class);
+        $nodesRegistry = Factory::buildNodesRegistry();
+        $nodesRegistry->add(new Custom\User());
+
+        $renderer = new Renderer($nodesRegistry);
 
         $this->assertEquals($html, $renderer->render($json));
     }

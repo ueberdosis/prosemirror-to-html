@@ -3,9 +3,15 @@
 namespace ProseMirrorToHtml\Test\Marks\Custom;
 
 use ProseMirrorToHtml\Marks\Mark;
+use ProseMirrorToHtml\Renderers\Marks\AbstractMarkRenderer;
 
-class Bold extends Mark
+class Bold extends AbstractMarkRenderer
 {
-    protected $markType = 'bold';
-    protected $tagName = 'b';
+    /**
+     * @inheritDoc
+     */
+    public function getTag($node)
+    {
+        return 'b';
+    }
 }

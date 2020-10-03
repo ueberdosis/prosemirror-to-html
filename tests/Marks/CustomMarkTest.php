@@ -2,6 +2,7 @@
 
 namespace ProseMirrorToHtml\Test\Marks;
 
+use ProseMirrorToHtml\Registry\Factory;
 use ProseMirrorToHtml\Renderer;
 use ProseMirrorToHtml\Test\TestCase;
 use ProseMirrorToHtml\Test\Marks\Custom\CustomMark;
@@ -28,8 +29,10 @@ class CustomMarkTest extends TestCase
 
         $html = '<custom_mark>Example Text</custom_mark>';
 
-        $renderer = new Renderer();
-        $renderer->addMark(CustomMark::class);
+        $marksRegistry = Factory::buildMarksRegistry();
+        $marksRegistry->add(new CustomMark());
+
+        $renderer = new Renderer(null, $marksRegistry);
 
         $this->assertEquals($html, $renderer->render($json));
     }
@@ -54,8 +57,10 @@ class CustomMarkTest extends TestCase
 
         $html = '<custom_mark>Example Text</custom_mark>';
 
-        $renderer = new Renderer();
-        $renderer->addMarks([CustomMark::class]);
+        $marksRegistry = Factory::buildMarksRegistry();
+        $marksRegistry->add(new CustomMark());
+
+        $renderer = new Renderer(null, $marksRegistry);
 
         $this->assertEquals($html, $renderer->render($json));
     }
