@@ -1,73 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ad75a85-cdb4-4bce-897d-3a24a8606e61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Exceptions/RendererNotFoundException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Helpers/StringHelper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Registry/Factory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Registry/RendererRegistry.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/AbstractMarkRenderer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/Code.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/Italic.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/Link.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/MarkRendererInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/Strike.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/Subscript.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/Superscript.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Marks/Underline.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/AbstractNodeRenderer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/BulletList.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/CodeBlock.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/HardBreak.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/Heading.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/Image.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/ListItem.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/NodeRendererInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/OrderedList.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/Paragraph.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/Table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/TableCell.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/TableHeader.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/TableRow.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/Nodes/Text.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderers/RendererInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Marks/Bold.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renderers/Marks/Bold.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Marks/Code.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Marks/Italic.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Marks/Link.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Marks/Mark.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Marks/Strike.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Marks/Subscript.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Marks/Superscript.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Marks/Underline.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nodes/Blockquote.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renderers/Nodes/Blockquote.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nodes/BulletList.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nodes/CodeBlock.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nodes/HardBreak.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nodes/Heading.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nodes/Image.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nodes/ListItem.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nodes/Node.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nodes/OrderedList.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nodes/Paragraph.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nodes/Table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nodes/TableCell.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nodes/TableHeader.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nodes/TableRow.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Renderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renderer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ConfiguredMarksTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ConfiguredMarksTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ConfiguredNodesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ConfiguredNodesTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Marks/BoldTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Marks/BoldTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Marks/Custom/Bold.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Marks/Custom/Bold.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Marks/Custom/CustomMark.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Marks/Custom/CustomMark.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Marks/CustomMarkTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Marks/CustomMarkTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Marks/ItalicTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Marks/ItalicTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Marks/StrikeTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Marks/StrikeTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Nodes/Custom/Div.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Nodes/Custom/Div.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Nodes/Custom/Paragraph.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Nodes/Custom/Paragraph.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Nodes/Custom/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Nodes/Custom/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Nodes/CustomNodeTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Nodes/CustomNodeTest.php" afterDir="false" />
-    </list>
+    <list default="true" id="1ad75a85-cdb4-4bce-897d-3a24a8606e61" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,7 +109,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601727645428</updated>
-      <workItem from="1601727649511" duration="8787000" />
+      <workItem from="1601727649511" duration="8955000" />
     </task>
     <servers />
   </component>
@@ -213,17 +147,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Registry/RendererRegistry.php</url>
-          <line>48</line>
+          <line>47</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Renderers/Nodes/AbstractNodeRenderer.php</url>
-          <line>16</line>
+          <line>15</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Renderer.php</url>
-          <line>64</line>
+          <line>63</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
