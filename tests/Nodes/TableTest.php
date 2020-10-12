@@ -8,7 +8,7 @@ use ProseMirrorToHtml\Test\TestCase;
 class TableTest extends TestCase
 {
     /** @test */
-    public function table_gets_rendered_correctly()
+    public function table_node_gets_rendered_correctly()
     {
         $json = [
             'type'    => 'doc',

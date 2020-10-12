@@ -8,7 +8,7 @@ use ProseMirrorToHtml\Test\TestCase;
 class ItalicTest extends TestCase
 {
     /** @test */
-    public function underline_gets_rendered_correctly()
+    public function italic_mark_gets_rendered_correctly()
     {
         $json = [
             'type' => 'doc',

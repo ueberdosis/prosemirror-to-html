@@ -8,7 +8,7 @@ use ProseMirrorToHtml\Test\TestCase;
 class SubscriptTest extends TestCase
 {
     /** @test */
-    public function subscript_gets_rendered_correctly()
+    public function subscript_mark_gets_rendered_correctly()
     {
         $json = [
             'type' => 'doc',

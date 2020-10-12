@@ -8,7 +8,7 @@ use ProseMirrorToHtml\Test\TestCase;
 class ParagraphTest extends TestCase
 {
     /** @test */
-    public function paragraph_gets_rendered_correctly()
+    public function paragraph_node_gets_rendered_correctly()
     {
         $json = [
             'type' => 'doc',

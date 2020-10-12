@@ -35,7 +35,7 @@ class CustomMarkTest extends TestCase
     }
 
     /** @test */
-    public function multiple_custom_marks_gets_rendered_correctly()
+    public function multiple_custom_marks_get_rendered_correctly()
     {
         $json = [
             'type' => 'doc',

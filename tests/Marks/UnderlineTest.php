@@ -8,7 +8,7 @@ use ProseMirrorToHtml\Test\TestCase;
 class UnderlineTest extends TestCase
 {
     /** @test */
-    public function underline_gets_rendered_correctly()
+    public function underline_mark_gets_rendered_correctly()
     {
         $json = [
             'type' => 'doc',

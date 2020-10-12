@@ -8,7 +8,7 @@ use ProseMirrorToHtml\Test\TestCase;
 class BulletListTest extends TestCase
 {
     /** @test */
-    public function bullet_list_gets_rendered_correctly()
+    public function bullet_list_node_gets_rendered_correctly()
     {
         $json = [
             'type' => 'doc',

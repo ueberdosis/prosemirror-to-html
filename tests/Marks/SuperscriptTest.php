@@ -8,7 +8,7 @@ use ProseMirrorToHtml\Test\TestCase;
 class SuperscriptTest extends TestCase
 {
     /** @test */
-    public function superscript_gets_rendered_correctly()
+    public function superscript_mark_gets_rendered_correctly()
     {
         $json = [
             'type' => 'doc',

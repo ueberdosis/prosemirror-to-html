@@ -8,7 +8,7 @@ use ProseMirrorToHtml\Test\TestCase;
 class HeadingTest extends TestCase
 {
     /** @test */
-    public function heading_gets_rendered_correctly()
+    public function heading_node_gets_rendered_correctly()
     {
         $json = [
             'type' => 'doc',

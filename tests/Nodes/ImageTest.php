@@ -8,7 +8,7 @@ use ProseMirrorToHtml\Test\TestCase;
 class ImageTest extends TestCase
 {
     /** @test */
-    public function image_gets_rendered_correctly()
+    public function image_node_gets_rendered_correctly()
     {
         $json = [
             'type' => 'doc',

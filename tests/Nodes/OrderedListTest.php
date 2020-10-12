@@ -8,7 +8,7 @@ use ProseMirrorToHtml\Test\TestCase;
 class OrderedListTest extends TestCase
 {
     /** @test */
-    public function ordered_list_gets_rendered_correctly()
+    public function ordered_list_node_gets_rendered_correctly()
     {
         $json = [
             'type' => 'doc',

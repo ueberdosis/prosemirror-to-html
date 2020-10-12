@@ -8,7 +8,7 @@ use ProseMirrorToHtml\Test\TestCase;
 class BlockquoteTest extends TestCase
 {
     /** @test */
-    public function blockquote_gets_rendered_correctly()
+    public function blockquote_node_gets_rendered_correctly()
     {
         $json = [
             'type' => 'doc',

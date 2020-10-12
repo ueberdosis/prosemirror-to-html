@@ -8,7 +8,7 @@ use ProseMirrorToHtml\Test\TestCase;
 class StrikeTest extends TestCase
 {
     /** @test */
-    public function underline_gets_rendered_correctly()
+    public function strike_gets_rendered_correctly()
     {
         $json = [
             'type' => 'doc',

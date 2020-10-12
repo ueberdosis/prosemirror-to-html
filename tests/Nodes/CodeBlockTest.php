@@ -8,7 +8,7 @@ use ProseMirrorToHtml\Test\TestCase;
 class CodeBlockTest extends TestCase
 {
     /** @test */
-    public function code_block_gets_rendered_correctly()
+    public function code_block_node_gets_rendered_correctly()
     {
         $json = [
             'type' => 'doc',

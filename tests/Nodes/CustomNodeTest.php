@@ -48,7 +48,7 @@ class CustomNodeTest extends TestCase
     }
 
     /** @test */
-    public function custom_node_has_correct_text_gets_rendered_correctly()
+    public function custom_node_renders_with_correct_text()
     {
         $json = [
             'type' => 'doc',

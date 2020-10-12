@@ -8,7 +8,7 @@ use ProseMirrorToHtml\Test\TestCase;
 class ExampleJsonTest extends TestCase
 {
     /** @test */
-    public function example_gets_rendered_correctly()
+    public function example_json_gets_rendered_correctly()
     {
         $json = '{
             "type": "doc",
