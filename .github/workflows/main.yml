@@ -75,6 +75,8 @@ jobs:
 
         dependencies:
           - "locked"
+          - "lowest"
+          - "highest"
 
     steps:
       - name: "Checkout"
