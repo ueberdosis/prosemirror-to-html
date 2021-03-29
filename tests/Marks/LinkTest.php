@@ -100,7 +100,6 @@ class LinkTest extends TestCase
                             'type' => 'link',
                             'attrs' => [
                                 'href' => 'https://example.com',
-                                'target' => null,
                             ],
                         ],
                     ],

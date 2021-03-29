@@ -65,7 +65,7 @@ class Renderer
         return $this;
     }
 
-    private function renderNode($node)
+    private function renderNode($node, $prevNode = null, $nextNode = null)
     {
         $html = [];
 
@@ -74,7 +74,7 @@ class Renderer
                 foreach ($this->marks as $class) {
                     $renderClass = new $class($mark);
 
-                    if ($renderClass->matching()) {
+                    if ($renderClass->matching() && $this->markShouldOpen($mark, $prevNode)) {
                         $html[] = $this->renderOpeningTag($renderClass->tag());
                     }
                 }
@@ -92,6 +92,7 @@ class Renderer
 
         if (isset($node->content)) {
             foreach ($node->content as $nestedNode) {
+                // TODO: Prev/Next Node
                 $html[] = $this->renderNode($nestedNode);
             }
         } elseif (isset($node->text)) {
@@ -117,7 +118,7 @@ class Renderer
                 foreach ($this->marks as $class) {
                     $renderClass = new $class($mark);
 
-                    if ($renderClass->matching()) {
+                    if ($renderClass->matching() && $this->markShouldClose($mark, $nextNode)) {
                         $html[] = $this->renderClosingTag($renderClass->tag());
                     }
                 }
@@ -125,6 +126,46 @@ class Renderer
         }
 
         return join($html);
+    }
+
+    private function markShouldOpen($mark, $prevNode)
+    {
+        if (!$prevNode) {
+            return true;
+        }
+
+        if (!$prevNode->marks) {
+            return true;
+        }
+
+        // Previous node has same mark
+        foreach ($prevNode->marks as $otherMark) {
+            if ($mark == $otherMark) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private function markShouldClose($mark, $nextNode)
+    {
+        if (!$nextNode) {
+            return true;
+        }
+
+        if (!$nextNode->marks) {
+            return true;
+        }
+
+        // Next node has same mark
+        foreach ($nextNode->marks as $otherMark) {
+            if ($mark == $otherMark) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private function renderOpeningTag($tags)
@@ -177,8 +218,11 @@ class Renderer
 
         $content = is_array($this->document->content) ? $this->document->content : [];
 
-        foreach ($content as $node) {
-            $html[] = $this->renderNode($node);
+        foreach ($content as $index => $node) {
+            $prevNode = $content[$index - 1] ?? null;
+            $nextNode = $content[$index + 1] ?? null;
+
+            $html[] = $this->renderNode($node, $prevNode, $nextNode);
         }
 
         return join($html);
