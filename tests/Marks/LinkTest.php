@@ -86,4 +86,46 @@ class LinkTest extends TestCase
 
         $this->assertEquals($html, (new Renderer)->render($json));
     }
+
+    /** @test */
+    public function link_with_marks_generate_clean_output()
+    {
+        $json = [
+            'type' => 'doc',
+            'content' => [
+                [
+                    'type' => 'text',
+                    'marks' => [
+                        [
+                            'type' => 'link',
+                            'attrs' => [
+                                'href' => 'https://example.com',
+                                'target' => null,
+                            ],
+                        ],
+                    ],
+                    'text' => 'Example ',
+                ],
+                [
+                    'type' => 'text',
+                    'marks' => [
+                        [
+                            'type' => 'link',
+                            'attrs' => [
+                                'href' => 'https://example.com',
+                            ],
+                        ],
+                        [
+                            'type' => 'bold',
+                        ],
+                    ],
+                    'text' => 'Link',
+                ],
+            ],
+        ];
+
+        $html = '<a href="https://example.com">Example <strong>Link</strong></a>';
+
+        $this->assertEquals($html, (new Renderer)->render($json));
+    }
 }
