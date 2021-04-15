@@ -42,4 +42,40 @@ class InputTest extends TestCase
 
         $this->assertEquals($html, (new Renderer)->render($json));
     }
+
+    /** @test */
+    public function encoding_is_correct()
+    {
+        $json = [
+            'type' => 'doc',
+            'content' => [
+                [
+                    'type' => 'text',
+                    'text' => 'Äffchen',
+                ],
+            ],
+        ];
+
+        $html = 'Äffchen';
+
+        $this->assertEquals($html, (new Renderer)->render($json));
+    }
+
+    /** @test */
+    public function quotes_are_escape()
+    {
+        $json = [
+            'type' => 'doc',
+            'content' => [
+                [
+                    'type' => 'text',
+                    'text' => '"Example Text"',
+                ],
+            ],
+        ];
+
+        $html = '&quot;Example Text&quot;';
+
+        $this->assertEquals($html, (new Renderer)->render($json));
+    }
 }
