@@ -88,7 +88,7 @@ class LinkTest extends TestCase
     }
 
     /** @test */
-    public function link_with_marks_generate_clean_output()
+    public function link_with_marks_generates_clean_output()
     {
         $json = [
             'type' => 'doc',
@@ -124,6 +124,52 @@ class LinkTest extends TestCase
         ];
 
         $html = '<a href="https://example.com">Example <strong>Link</strong></a>';
+
+        $this->assertEquals($html, (new Renderer)->render($json));
+    }
+
+    /** @test */
+    public function link_with_marks_inside_node_generates_clean_output()
+    {
+        $json = [
+            'type' => 'doc',
+            'content' => [
+                [
+                    'type' => 'paragraph',
+                    'content' => [
+                        [
+                            'type' => 'text',
+                            'marks' => [
+                                [
+                                    'type' => 'link',
+                                    'attrs' => [
+                                        'href' => 'https://example.com',
+                                    ],
+                                ],
+                            ],
+                            'text' => 'Example ',
+                        ],
+                        [
+                            'type' => 'text',
+                            'marks' => [
+                                [
+                                    'type' => 'link',
+                                    'attrs' => [
+                                        'href' => 'https://example.com',
+                                    ],
+                                ],
+                                [
+                                    'type' => 'bold',
+                                ],
+                            ],
+                            'text' => 'Link',
+                        ],
+                    ],
+                ],
+            ],
+        ];
+
+        $html = '<p><a href="https://example.com">Example <strong>Link</strong></a></p>';
 
         $this->assertEquals($html, (new Renderer)->render($json));
     }

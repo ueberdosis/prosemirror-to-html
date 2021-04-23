@@ -91,9 +91,12 @@ class Renderer
         }
 
         if (isset($node->content)) {
-            foreach ($node->content as $nestedNode) {
-                // TODO: Prev/Next Node
-                $html[] = $this->renderNode($nestedNode);
+            foreach ($node->content as $index => $nestedNode) {
+                $prevNestedNode = $node->content[$index - 1] ?? null;
+                $nextNestedNode = $node->content[$index + 1] ?? null;
+
+                $html[] = $this->renderNode($nestedNode, $prevNestedNode, $nextNestedNode);
+                $prevNode = $nestedNode;
             }
         } elseif (isset($node->text)) {
             $html[] = htmlentities($node->text, ENT_QUOTES);
@@ -130,36 +133,26 @@ class Renderer
 
     private function markShouldOpen($mark, $prevNode)
     {
-        if (!$prevNode) {
-            return true;
-        }
-
-        if (!$prevNode->marks) {
-            return true;
-        }
-
-        // Previous node has same mark
-        foreach ($prevNode->marks as $otherMark) {
-            if ($mark == $otherMark) {
-                return false;
-            }
-        }
-
-        return true;
+        return $this->nodeHasMark($prevNode, $mark);
     }
 
     private function markShouldClose($mark, $nextNode)
     {
-        if (!$nextNode) {
+        return $this->nodeHasMark($nextNode, $mark);
+    }
+
+    private function nodeHasMark($node, $mark)
+    {
+        if (!$node) {
             return true;
         }
 
-        if (!$nextNode->marks) {
+        if (!property_exists($node, 'marks')) {
             return true;
         }
 
-        // Next node has same mark
-        foreach ($nextNode->marks as $otherMark) {
+        // Other node has same mark
+        foreach ($node->marks as $otherMark) {
             if ($mark == $otherMark) {
                 return false;
             }
