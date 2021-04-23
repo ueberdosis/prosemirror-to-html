@@ -65,7 +65,7 @@ class Renderer
         return $this;
     }
 
-    private function renderNode($node)
+    private function renderNode($node, $prevNode = null, $nextNode = null)
     {
         $html = [];
 
@@ -74,7 +74,7 @@ class Renderer
                 foreach ($this->marks as $class) {
                     $renderClass = new $class($mark);
 
-                    if ($renderClass->matching()) {
+                    if ($renderClass->matching() && $this->markShouldOpen($mark, $prevNode)) {
                         $html[] = $this->renderOpeningTag($renderClass->tag());
                     }
                 }
@@ -91,8 +91,12 @@ class Renderer
         }
 
         if (isset($node->content)) {
-            foreach ($node->content as $nestedNode) {
-                $html[] = $this->renderNode($nestedNode);
+            foreach ($node->content as $index => $nestedNode) {
+                $prevNestedNode = $node->content[$index - 1] ?? null;
+                $nextNestedNode = $node->content[$index + 1] ?? null;
+
+                $html[] = $this->renderNode($nestedNode, $prevNestedNode, $nextNestedNode);
+                $prevNode = $nestedNode;
             }
         } elseif (isset($node->text)) {
             $html[] = htmlspecialchars($node->text, ENT_QUOTES, 'UTF-8');
@@ -117,7 +121,7 @@ class Renderer
                 foreach ($this->marks as $class) {
                     $renderClass = new $class($mark);
 
-                    if ($renderClass->matching()) {
+                    if ($renderClass->matching() && $this->markShouldClose($mark, $nextNode)) {
                         $html[] = $this->renderClosingTag($renderClass->tag());
                     }
                 }
@@ -125,6 +129,36 @@ class Renderer
         }
 
         return join($html);
+    }
+
+    private function markShouldOpen($mark, $prevNode)
+    {
+        return $this->nodeHasMark($prevNode, $mark);
+    }
+
+    private function markShouldClose($mark, $nextNode)
+    {
+        return $this->nodeHasMark($nextNode, $mark);
+    }
+
+    private function nodeHasMark($node, $mark)
+    {
+        if (!$node) {
+            return true;
+        }
+
+        if (!property_exists($node, 'marks')) {
+            return true;
+        }
+
+        // Other node has same mark
+        foreach ($node->marks as $otherMark) {
+            if ($mark == $otherMark) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private function renderOpeningTag($tags)
@@ -177,8 +211,11 @@ class Renderer
 
         $content = is_array($this->document->content) ? $this->document->content : [];
 
-        foreach ($content as $node) {
-            $html[] = $this->renderNode($node);
+        foreach ($content as $index => $node) {
+            $prevNode = $content[$index - 1] ?? null;
+            $nextNode = $content[$index + 1] ?? null;
+
+            $html[] = $this->renderNode($node, $prevNode, $nextNode);
         }
 
         return join($html);
