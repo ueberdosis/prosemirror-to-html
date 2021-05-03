@@ -68,7 +68,7 @@ Define your custom nodes as PHP classes:
 
 class CustomNode extends \ProseMirrorToHtml\Nodes\Node
 {
-    protected $markType = 'custom';
+    protected $nodeType = 'custom';
     protected $tagName = 'marquee';
 }
 ```
