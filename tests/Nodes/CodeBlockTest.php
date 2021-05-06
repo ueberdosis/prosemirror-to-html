@@ -14,7 +14,7 @@ class CodeBlockTest extends TestCase
             'type' => 'doc',
             'content' => [
                 [
-                    'type' => 'code_block',
+                    'type' => 'codeBlock',
                     'content' => [
                         [
                             'type' => 'text',
@@ -22,10 +22,19 @@ class CodeBlockTest extends TestCase
                         ],
                     ],
                 ],
+                [
+                    'type' => 'code_block',
+                    'content' => [
+                        [
+                            'type' => 'text',
+                            'text' => 'Foo Text',
+                        ],
+                    ],
+                ],
             ],
         ];
 
-        $html = '<pre><code>Example Text</code></pre>';
+        $html = '<pre><code>Example Text</code></pre><pre><code>Foo Text</code></pre>';
 
         $this->assertEquals($html, (new Renderer)->render($json));
     }

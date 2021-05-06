@@ -14,6 +14,20 @@ class BulletListTest extends TestCase
             'type' => 'doc',
             'content' => [
                 [
+                    'type' => 'bulletList',
+                    'content' => [
+                        [
+                            'type' => 'listItem',
+                            'content' => [
+                                [
+                                    'type' => 'text',
+                                    'text' => 'first list item',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
                     'type' => 'bullet_list',
                     'content' => [
                         [
@@ -30,7 +44,7 @@ class BulletListTest extends TestCase
             ],
         ];
 
-        $html = '<ul><li>first list item</li></ul>';
+        $html = '<ul><li>first list item</li></ul><ul><li>first list item</li></ul>';
 
         $this->assertEquals($html, (new Renderer)->render($json));
     }

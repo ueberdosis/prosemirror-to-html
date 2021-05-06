@@ -21,18 +21,25 @@ class HardBreakNodeTest extends TestCase
                             'text' => 'some text',
                         ],
                         [
-                            'type' => 'hard_break',
+                            'type' => 'hardBreak',
                         ],
                         [
                             'type' => 'text',
                             'text' => 'some more text',
+                        ],
+                        [
+                            'type' => 'hard_break',
+                        ],
+                        [
+                            'type' => 'text',
+                            'text' => 'other text',
                         ],
                     ],
                 ],
             ],
         ];
 
-        $html = '<p>some text<br>some more text</p>';
+        $html = '<p>some text<br>some more text<br>other text</p>';
 
         $this->assertEquals($html, (new Renderer)->render($json));
     }

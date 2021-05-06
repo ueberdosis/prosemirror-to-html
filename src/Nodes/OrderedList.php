@@ -4,7 +4,7 @@ namespace ProseMirrorToHtml\Nodes;
 
 class OrderedList extends Node
 {
-    protected $nodeType = 'ordered_list';
+    protected $nodeType = ['ordered_list', 'orderedList'];
     protected $tagName = 'ol';
 
     public function tag()

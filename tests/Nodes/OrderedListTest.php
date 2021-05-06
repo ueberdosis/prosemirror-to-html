@@ -42,13 +42,13 @@ class OrderedListTest extends TestCase
             'type' => 'doc',
             'content' => [
                 [
-                    'type' => 'ordered_list',
+                    'type' => 'orderedList',
                     'attrs' => [
                         'order' => 3,
                     ],
                     'content' => [
                         [
-                            'type' => 'list_item',
+                            'type' => 'listItem',
                             'content' => [
                                 [
                                     'type' => 'text',

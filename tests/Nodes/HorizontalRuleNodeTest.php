@@ -23,7 +23,7 @@ class HorizontalRuleNodeTest extends TestCase
                     ],
                 ],
                 [
-                    'type' => 'horizontal_rule',
+                    'type' => 'horizontalRule',
                 ],
                 [
                     'type' => 'paragraph',
@@ -34,10 +34,13 @@ class HorizontalRuleNodeTest extends TestCase
                         ],
                     ],
                 ],
+                [
+                    'type' => 'horizontal_rule',
+                ],
             ],
         ];
 
-        $html = '<p>some text</p><hr><p>some more text</p>';
+        $html = '<p>some text</p><hr><p>some more text</p><hr>';
 
         $this->assertEquals($html, (new Renderer)->render($json));
     }
