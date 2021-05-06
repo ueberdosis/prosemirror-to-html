@@ -2,12 +2,13 @@
 
 namespace ProseMirrorToHtml\Test\Marks;
 
-use ProseMirrorToHtml\Marks\Bold;
 use ProseMirrorToHtml\Renderer;
+use ProseMirrorToHtml\Marks\Bold;
 use ProseMirrorToHtml\Test\TestCase;
 use ProseMirrorToHtml\Test\Marks\Custom\CustomMark;
 
-class CustomBold extends Bold {
+class CustomBold extends Bold
+{
     protected $markType = 'strong';
 }
 

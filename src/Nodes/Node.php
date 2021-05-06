@@ -18,7 +18,7 @@ class Node
         if (isset($this->node->type)) {
             if (is_array($this->nodeType)) {
                 return in_array($this->node->type, $this->nodeType, true);
-            } 
+            }
             
             return $this->node->type === $this->nodeType;
         }
