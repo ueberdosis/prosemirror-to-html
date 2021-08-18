@@ -19,6 +19,10 @@ class Link extends Mark
             $attrs['rel'] = $this->mark->attrs->rel;
         }
 
+        if (isset($this->mark->attrs->title)) {
+            $attrs['title'] = $this->mark->attrs->title;
+        }
+
         $attrs['href'] = $this->mark->attrs->href;
 
         return [
