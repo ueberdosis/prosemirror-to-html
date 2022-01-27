@@ -1,4 +1,4 @@
-> We need your support to maintain this package. 💖 https://github.com/sponsors/ueberdosis
+> 🚨 We’ve done a rewrite that you probably want to check out: [ueberdosis/tiptap-php](https://github.com/ueberdosis/tiptap-php)
 
 # ProseMirror to HTML
 Takes ProseMirror JSON and outputs HTML.
